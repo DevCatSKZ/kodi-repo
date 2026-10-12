@@ -7,17 +7,17 @@
 - `tools/build_repo.py` erzeugt `addons.xml`, `addons.xml.md5` und `.sha256`-Dateien.
   Nie `addons.xml` von Hand editieren – immer das Tool laufen lassen.
 
-## WICHTIG: History wurde neu geschrieben
+## WICHTIG: Repo wurde gelöscht und neu angelegt
 
-Die Git-Historie wurde per `git filter-branch` bereinigt und mit
-`git push --force` überschrieben (Commit-SHA `acb8ca8` ist der aktuelle HEAD).
-Grund: Eine private IPTV-Playlist des Nutzers (`livetv/playlist.m3u`) war
-versehentlich committet worden – alle `livetv/`, `service.livetv.*`-Pfade
-und LiveTV-Beschreibungen wurden aus der gesamten Historie entfernt.
+Das GitHub-Repo `DevCatSKZ/kodi-repo` wurde komplett gelöscht und neu
+angelegt, weil eine private IPTV-Playlist des Nutzers
+(`livetv/playlist.m3u`) versehentlich committet worden war und GitHub
+alte Commit-Objekte weiterhin auslieferte. Alle `livetv/`-,
+`service.livetv.*`-Pfade und LiveTV-Beschreibungen sind aus der
+gesamten Historie entfernt.
 
 **Konsequenz für andere Clones:**
-- Alte Clone-Stände sind divergent – NICHT per `git pull` mergen
-  (würde die alte Historie zurückbringen).
+- Jeder bestehende Clone ist veraltet – NICHT per `git pull` mergen.
 - Stattdessen: `git fetch origin && git reset --hard origin/main`
   oder frisch klonen.
 
