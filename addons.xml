@@ -64,25 +64,7 @@
         </assets>
     </extension>
 </addon>
-<addon id="service.livetv.bundle" name="LiveTV Komplettpaket (Playlist + EPG)" version="1.0.0" provider-name="Devin">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="pvr.iptvsimple" version="21.0.0" optional="true"/>
-    </requires>
-    <extension point="xbmc.service" library="service.py"/>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="de_DE">LiveTV Komplettpaket: Playlist + EPG-Manager</summary>
-        <description lang="de_DE">All-in-One: Bringt eine fertige Playlist mit Sender-Icons mit, installiert/konfiguriert pvr.iptvsimple und haelt das TV-Programm (EPG) taeglich aktuell. Quellen: michazepg + epgshare01 (DE/AT/CH/UK/NL/PL/FR/IT/RO). Funktioniert komplett offline nach der Installation.</description>
-        <summary lang="en_GB">LiveTV bundle: playlist + EPG manager</summary>
-        <description lang="en_GB">All-in-one: ships a ready-made playlist with channel icons, installs/configures pvr.iptvsimple and keeps the EPG guide up to date daily.</description>
-        <platform>all</platform>
-        <license>MIT</license>
-        <assets>
-            <icon>resources/data/generic_tv.png</icon>
-        </assets>
-    </extension>
-</addon>
-<addon id="service.livetv.epg" name="LiveTV EPG Manager" version="1.1.0" provider-name="Devin">
+<addon id="service.livetv.epg" name="LiveTV EPG Manager" version="1.1.1" provider-name="Devin">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="pvr.iptvsimple" version="21.0.0" optional="true"/>
@@ -90,9 +72,9 @@
     <extension point="xbmc.service" library="service.py"/>
     <extension point="xbmc.addon.metadata">
         <summary lang="de_DE">IPTV Simple Setup + EPG-Manager</summary>
-        <description lang="de_DE">Installiert und konfiguriert pvr.iptvsimple automatisch. Playlist und EPG-Quellen werden aus dem Netz geladen und taeglich aktuell gehalten. Quellen: michazepg + epgshare01 (DE/AT/CH/UK/NL/PL/FR/IT/RO). Eigene Playlist-URL in den Einstellungen moeglich.</description>
+        <description lang="de_DE">Installiert und konfiguriert pvr.iptvsimple automatisch und haelt das TV-Programm taeglich aktuell. EPG-Quellen: michazepg + epgshare01 (DE/AT/CH/UK/NL/PL/FR/IT/RO). Playlist: eigene URL in den Einstellungen eintragen oder playlist.m3u im Addon-Datenordner ablegen.</description>
         <summary lang="en_GB">IPTV Simple setup + EPG manager</summary>
-        <description lang="en_GB">Installs and configures pvr.iptvsimple automatically. Playlist and EPG sources are downloaded and refreshed daily. Custom playlist URL supported.</description>
+        <description lang="en_GB">Installs and configures pvr.iptvsimple automatically and keeps the EPG guide up to date daily. Playlist: set your own URL in settings or place playlist.m3u in the addon data folder.</description>
         <platform>all</platform>
         <license>MIT</license>
         <assets>
