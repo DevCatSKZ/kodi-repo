@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="plugin.nconnect.status" name="N-Connect Status" version="1.0.1" provider-name="Devin">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="de_DE">Verbundene Controller als Widget</summary>
+        <description lang="de_DE">Zeigt die über N-Connect verbundenen Controller (Name, Akku, Ladestatus) als Liste an. Fuer Skin-Widgets gedacht.</description>
+        <summary lang="en_GB">Connected controllers as widget</summary>
+        <description lang="en_GB">Lists controllers connected via N-Connect (name, battery, charging). Meant for skin widgets.</description>
+        <platform>all</platform>
+        <license>MIT</license>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
+</addon>
 <addon id="repository.devcatskz" name="DevCatSKZ Repository" version="1.0.2" provider-name="devcatskz">
   <!-- Add-on-Quelle für alle Kodi-Plugins von DevCatSKZ (N-Connect und künftige). Inhalt: GitHub-Repo
        DevCatSKZ/kodi-repo (addons.xml, Prüfsummen, ZIPs), erzeugt mit repo-tools/build_repo.py. -->
@@ -24,6 +43,26 @@
       <icon>icon.png</icon>
     </assets>
   </extension>
+</addon>
+<addon id="script.nconnect.bundle" name="N-Connect Bundle Installer" version="1.0.0" provider-name="Skittelz">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="de_DE">N-Connect + Status-Widget in einem Paket</summary>
+        <description lang="de_DE">Installiert N-Connect (Controller-Dienst) und das Status-Widget (plugin.nconnect.status) in einem Schritt. Traegt bei Aeon Nox Silvo automatisch den Menuepunkt samt Widget ein.</description>
+        <summary lang="en_GB">N-Connect + status widget in one package</summary>
+        <description lang="en_GB">Installs N-Connect (controller service) and the status widget (plugin.nconnect.status) in one step. On Aeon Nox Silvo it also adds the menu entry with its widget.</description>
+        <platform>all</platform>
+        <license>MIT</license>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
 </addon>
 <addon id="service.nconnect" name="N-Connect (LibreELEC/Linux)" version="0.3.0" provider-name="devcatskz">
   <requires>
