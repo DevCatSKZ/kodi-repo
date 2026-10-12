@@ -16,18 +16,6 @@
 | **[N-Connect](https://github.com/DevCatSKZ/N-Connect)** (`service.nconnect`) | Nintendo-Switch-2-Controller (Joy-Con 2, Pro Controller 2, GameCube) per Bluetooth – jeder Controller wird ein Xbox-Controller für Kodi, RetroArch und Spiele. Koppelt außerdem Xbox-, PlayStation-, Switch-1- und 8BitDo-Controller automatisch. Vibration, Akku-Warnung, Controller-Tasten für Kodi-Aktionen, 12 Sprachen. | LibreELEC / Linux: Raspberry Pi 2–5, 64-Bit-Boxen, PC |
 | **N-Connect Status** (`plugin.nconnect.status`) | Widget-Plugin für Skins: zeigt verbundene Controller mit Name, Akku, Ladestatus und Spieler-Nr. als Liste. Klick auf einen Controller öffnet sein Untermenü (Trennen / Details / Vergessen) über den N-Connect-Kommando-Kanal. | Alle Kodi-Geräte mit `service.nconnect` |
 | **N-Connect Bundle Installer** (`script.nconnect.bundle`) | All-in-One-Installer: installiert `service.nconnect` + `plugin.nconnect.status` aus eingebetteten ZIPs und richtet im Aeon-Nox-Silvo-Skin automatisch den N-CONNECT-Hauptmenüpunkt mit Controller-Widget ein. Danach Kodi neu starten. | LibreELEC / Linux |
-| **LiveTV EPG Manager** (`service.livetv.epg`) | Richtet `pvr.iptvsimple` automatisch ein und hält das TV-Programm aktuell: täglicher Merge aus michazepg + epgshare01 (DE/AT/CH/UK/NL/PL/FR/IT/RO). Playlist: eigene URL in den Einstellungen oder lokale `playlist.m3u` im Addon-Datenordner. | Alle Kodi-Geräte mit `pvr.iptvsimple` |
-
-## LiveTV-Setup – aktueller Stand
-
-| Komponente | Aktualisierung |
-|---|---|
-| **EPG (TV-Programm)** | Täglich automatisch. Auf dem RPi4 per Cron (`/storage/epg/update_epg.py`, 04:30 Uhr); in den Addons durch den eingebauten Service-Loop (einstellbar). |
-| **Stream-URLs (Vavoo, Joyn)** | Selbstheilend: die Einträge nutzen `plugin.video.vavooto`- bzw. `plugin.video.joyn`-Pfade, das jeweilige Addon löst den Stream beim Abspielen auf. |
-| **Radio-Streams** | Feste URLs, ändern sich praktisch nie. |
-| **Senderliste** | **Lokal / privat.** Die gemergte Playlist wird nicht öffentlich gehostet – sie liegt nur auf dem Gerät (`/storage/downloads/tv+radio all vavoo joyn new.m3u` auf dem RPi4). Neue/entfernte Kanäle erfordern einen manuellen Rebuild via `build_epg.py` und lokales Deployment. |
-
-Auf dem RPi4 laufen die Updates ohne Addon über Cron in `/storage/epg/` – auf anderen Geräten übernimmt das `service.livetv.epg`-Addon. Beide Varianten nicht gleichzeitig installieren, sonst entstehen doppelte Sender.
 
 ### N-Connect einzeln herunterladen (ohne Repository) · Single download
 
