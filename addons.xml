@@ -45,7 +45,7 @@
     </assets>
   </extension>
 </addon>
-<addon id="script.nconnect.bundle" name="N-Connect Bundle Installer" version="1.0.0" provider-name="Skittelz">
+<addon id="script.nconnect.bundle" name="N-Connect Bundle Installer" version="1.0.1" provider-name="Skittelz">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -59,13 +59,14 @@
         <summary lang="en_GB">N-Connect + status widget in one package</summary>
         <description lang="en_GB">Installs N-Connect (controller service) and the status widget (plugin.nconnect.status) in one step. On Aeon Nox Silvo it also adds the menu entry with its widget.</description>
         <platform>all</platform>
+        <news>1.0.1: Enthaelt service.nconnect 0.4.2 (alle Plattformen: LibreELEC, Batocera, Windows) und plugin.nconnect.status 1.1.0; Widget-Pfad mit NConnect.Reload-Token (aktualisiert sich selbst)[CR]1.0.0: Erste Version</news>
         <license>MIT</license>
         <assets>
             <icon>resources/icon.png</icon>
         </assets>
     </extension>
 </addon>
-<addon id="service.nconnect" name="N-Connect" version="0.4.1" provider-name="devcatskz">
+<addon id="service.nconnect" name="N-Connect" version="0.4.2" provider-name="devcatskz">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
   </requires>
@@ -101,7 +102,7 @@
     <license>MIT</license>
     <source>https://github.com/DevCatSKZ/N-Connect</source>
     <website>https://github.com/DevCatSKZ/N-Connect</website>
-    <news>0.4.1: Auf Kodi für Android/macOS stürzte der Dienst beim Start ab (kein Linux-Programm vorhanden) – dort läuft das Add-on jetzt sauber im Begleitmodus[CR]0.4.0: Läuft jetzt auf jeder Kodi-Plattform – zusätzlich zu LibreELEC auch Batocera (Linux) und Kodi unter Windows (Status/Widget kommen dort von der installierten N-Connect-App)[CR]0.3.4: Widget zeigt auch bekannte, gerade nicht verbundene Controller (ausgegraut) und aktualisiert sich bei jedem Verbinden/Trennen von selbst (Skin-Pfad mit ?reload=$INFO[Window(Home).Property(NConnect.Reload)])[CR]0.3.3: Home-Widget lädt nur noch neu, wenn wirklich etwas Sichtbares ändert und eine N-Connect-Liste fokussiert ist – vorher konnte das ständige Neuladen Hauptmenü und andere Listen stören (schwarzer Bildschirm); Berichtsrate nicht mehr in den Listen[CR]0.3.2: Verbindung auf Raspberry Pi &amp; Co. zuverlässiger – die Suche pausiert während des Verbindungsaufbaus (geteilte WLAN/BT-Antenne); Hinweis, falls aktives WLAN das Koppeln stört; neue Icons je Controller im Menü; verbundene Controller jetzt als Kodi-Widget im Home-Menü[CR]0.3.1: Joy-Con-Verbindung korrigiert – mit diesem Gerät gekoppelte Controller wurden fälschlich als „mit anderem Gerät verbunden“ gemeldet und konnten sich nicht verbinden[CR]0.3.0: Wii-Fernbedienung und Wii U Pro Controller koppeln, Gyro für Emulatoren (DSU/Cemuhook), feste Spielerplätze[CR]0.2.1:Name zeigt das System (LibreELEC/Linux), Downloads je Gerät[CR]0.2.0:Xbox-, PlayStation- und Switch-1-Controller automatisch koppeln, Hintergrundsuche abschaltbar, Akku-Warnung, Controller-Tasten für Kodi-Aktionen, 12 Sprachen, Update-Repository[CR]0.1.0: Erste Version für LibreELEC/Kodi</news>
+    <news>0.4.2: Begleitmodus nun auch wirklich auf Android (Kodi meldet dort 'Linux' – wird jetzt gezielt geprüft)[CR]0.4.1: Auf Kodi für Android/macOS stürzte der Dienst beim Start ab (kein Linux-Programm vorhanden) – dort läuft das Add-on jetzt sauber im Begleitmodus[CR]0.4.0: Läuft jetzt auf jeder Kodi-Plattform – zusätzlich zu LibreELEC auch Batocera (Linux) und Kodi unter Windows (Status/Widget kommen dort von der installierten N-Connect-App)[CR]0.3.4: Widget zeigt auch bekannte, gerade nicht verbundene Controller (ausgegraut) und aktualisiert sich bei jedem Verbinden/Trennen von selbst (Skin-Pfad mit ?reload=$INFO[Window(Home).Property(NConnect.Reload)])[CR]0.3.3: Home-Widget lädt nur noch neu, wenn wirklich etwas Sichtbares ändert und eine N-Connect-Liste fokussiert ist – vorher konnte das ständige Neuladen Hauptmenü und andere Listen stören (schwarzer Bildschirm); Berichtsrate nicht mehr in den Listen[CR]0.3.2: Verbindung auf Raspberry Pi &amp; Co. zuverlässiger – die Suche pausiert während des Verbindungsaufbaus (geteilte WLAN/BT-Antenne); Hinweis, falls aktives WLAN das Koppeln stört; neue Icons je Controller im Menü; verbundene Controller jetzt als Kodi-Widget im Home-Menü[CR]0.3.1: Joy-Con-Verbindung korrigiert – mit diesem Gerät gekoppelte Controller wurden fälschlich als „mit anderem Gerät verbunden“ gemeldet und konnten sich nicht verbinden[CR]0.3.0: Wii-Fernbedienung und Wii U Pro Controller koppeln, Gyro für Emulatoren (DSU/Cemuhook), feste Spielerplätze[CR]0.2.1:Name zeigt das System (LibreELEC/Linux), Downloads je Gerät[CR]0.2.0:Xbox-, PlayStation- und Switch-1-Controller automatisch koppeln, Hintergrundsuche abschaltbar, Akku-Warnung, Controller-Tasten für Kodi-Aktionen, 12 Sprachen, Update-Repository[CR]0.1.0: Erste Version für LibreELEC/Kodi</news>
     <assets>
       <icon>resources/icon.png</icon>
     </assets>
