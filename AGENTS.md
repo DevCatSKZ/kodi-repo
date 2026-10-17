@@ -14,9 +14,9 @@
 ## WICHTIG: Repo wurde gelöscht und neu angelegt
 
 Das GitHub-Repo `DevCatSKZ/kodi-repo` wurde komplett gelöscht und neu
-angelegt, weil eine private IPTV-Playlist des Nutzers
-(`livetv/playlist.m3u`) versehentlich committet worden war und GitHub
-alte Commit-Objekte weiterhin auslieferte. Alle `livetv/`- und
+angelegt, weil versehentlich private Daten des Nutzers (unter `livetv/`)
+committet worden waren und GitHub alte Commit-Objekte weiterhin
+auslieferte. Alle `livetv/`- und
 `service.livetv.*`-Pfade (Playlist, Add-on-ZIPs) sind aus der gesamten
 Historie entfernt. Ältere Stände von `addons.xml` und `README.md` in der
 Historie (Commits 14d8458 bis 874ca3e) enthalten aber noch
@@ -47,11 +47,12 @@ Historie weiter bereinigt wird, entscheidet der Nutzer.
 
 - Quellcode aller vier Add-ons: N-Connect-Repository
   (`github.com/DevCatSKZ/N-Connect`), Ordner `linux/kodi/`.
-- Bauen und hier ablegen: `linux/build-kodi-addon.ps1 -Repo` (prüft
-  Versionen, legt ZIPs und `downloads/` ab, baut den Index). Bei einem
-  Release-Tag `v…` macht das die CI von N-Connect selbst
-  (`.github/workflows/kodi.yml`, Deploy-Key im Secret
-  `KODI_REPO_DEPLOY_KEY`).
+- Bauen und hier ablegen (beim Release, von Hand): im N-Connect-Ordner
+  `linux/build-kodi-addon.ps1 -Repo -RepoDir <dieses Repository>` (prüft
+  Versionen, legt ZIPs und `downloads/` ab, baut den Index), danach hier
+  committen und pushen. Die CI von N-Connect schreibt nicht hierher
+  (kein automatischer Zugang; Deploy-Keys sind in der Organisation
+  abgeschaltet).
 - `plugin.nconnect.status`: ältere Widget-Quelle für Skins; leitet an
   `plugin.py` von `service.nconnect` weiter. Unterstützt
   Aeon-Nox-Silvo-Integration (skinshortcuts labelID = `service.nconnect`).

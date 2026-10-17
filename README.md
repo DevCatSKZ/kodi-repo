@@ -77,9 +77,10 @@ downloads/                               N-Connect-ZIPs je Gerät unter festem N
 ```
 
 Der Quellcode aller N-Connect-Add-ons liegt im [N-Connect-Repository](https://github.com/DevCatSKZ/N-Connect) unter
-`linux/kodi/`. Gebaut und hier abgelegt werden sie mit `linux/build-kodi-addon.ps1 -Repo` – bei einem Release-Tag
-erledigt das die CI von N-Connect selbst (Deploy-Key mit Schreibrecht nur auf dieses Repository). Eine Version, die
-hier schon liegt, wird nie überschrieben: für ein Update die Version in der `addon.xml` erhöhen.
-Andere Plugins: ZIP nach `<addon-id>/` kopieren, `python tools/build_repo.py` ausführen, committen.
+`linux/kodi/`. Beim Release werden sie von Hand gebaut und hier abgelegt: im N-Connect-Ordner
+`linux/build-kodi-addon.ps1 -Repo -RepoDir <dieses Repository>` ausführen (legt neue Versionen samt `downloads/` ab und
+baut den Index mit `tools/build_repo.py`), danach hier committen und pushen. Eine Version, die hier schon liegt, wird
+nie überschrieben: für ein Update die Version in der `addon.xml` erhöhen.
+Andere Plugins: ZIP nach `<addon-id>/` kopieren, `python tools/build_repo.py` ausführen, committen, pushen.
 
 Kein offizielles Produkt von Nintendo, Microsoft oder Sony. · Not an official Nintendo, Microsoft or Sony product. · MIT-Lizenz
