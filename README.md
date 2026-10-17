@@ -2,85 +2,44 @@
 
 <h1 align="center">DevCatSKZ Repository</h1>
 
-<p align="center">Alle Kodi-Plugins von DevCatSKZ an einem Ort – mit automatischen Updates.<br>
-<i>All Kodi plugins by DevCatSKZ in one place – with automatic updates.</i></p>
+<p align="center">Kodi-Add-ons von DevCatSKZ mit automatischen Updates.<br>
+<i>Kodi add-ons by DevCatSKZ with automatic updates.</i></p>
 
-<p align="center"><a href="https://github.com/DevCatSKZ/kodi-repo/raw/main/repository.devcatskz.zip"><b>⬇ repository.devcatskz.zip</b></a></p>
+<p align="center"><a href="https://github.com/DevCatSKZ/kodi-repo/raw/main/repository.devcatskz.zip"><b>repository.devcatskz.zip</b></a></p>
 
----
+## Add-ons
 
-## Plugins
-
-| Plugin | Beschreibung | Systeme |
-|---|---|---|
-| **[N-Connect](https://github.com/DevCatSKZ/N-Connect)** (`service.nconnect`) | Nintendo-Switch-2-Controller (Joy-Con 2, Pro Controller 2, GameCube) per Bluetooth – jeder Controller wird ein Xbox-Controller für Kodi, RetroArch und Spiele. Koppelt außerdem Xbox-, PlayStation-, Switch-1- und 8BitDo-Controller automatisch. Vibration, Akku-Warnung, Controller-Tasten für Kodi-Aktionen, 12 Sprachen. | **Selbstständig:** LibreELEC, Batocera, Linux (Raspberry Pi 2–5, 64-Bit-Boxen, PC). **Begleitmodus:** Kodi unter Windows und Android – dort verbindet die N-Connect-App die Controller, das Add-on zeigt Status und Widget (Android: N-Connect für Android ab 0.9.1). macOS: nur Anzeige, keine App. |
-| **N-Connect Status** (`plugin.nconnect.status`) | Widget-Quelle für Skins mit dem älteren Pfad `plugin://plugin.nconnect.status/`: zeigt verbundene und bekannte Controller mit Name, Akku, Ladestatus und Spieler-Nr. Jeder Klick öffnet das N-Connect-Hauptmenü. Leitet seit 1.1.0 an `service.nconnect` weiter. | Alle Kodi-Geräte mit `service.nconnect` |
-| **N-Connect Bundle Installer** (`script.nconnect.bundle`) | All-in-One-Installer: installiert `service.nconnect` + `plugin.nconnect.status` aus eingebetteten ZIPs (jeweils die beim Bauen aktuelle Version) und richtet im Aeon-Nox-Silvo-Skin automatisch den N-CONNECT-Hauptmenüpunkt mit Controller-Widget ein. Danach Kodi neu starten. | LibreELEC, Batocera, Linux; Windows und Android im Begleitmodus |
-
-**Teststand:** Auf echter Hardware geprüft ist N-Connect bisher nur auf dem Raspberry Pi 4 mit LibreELEC 12.2.1
-(Pro Controller 2 und Joy-Con 2). Alle anderen Geräte (Pi 2/3/5, 64-Bit-Boxen, PCs), Batocera, Kodi unter Android
-sowie die Kopplung von Xbox-, PlayStation-, Switch-1- und Wii-Controllern sind ungetestet – Rückmeldungen gern als
-[Issue](https://github.com/DevCatSKZ/N-Connect/issues). · *Tested on real hardware only on a Raspberry Pi 4 with
-LibreELEC 12.2.1; everything else is untested – feedback welcome.*
-
-### N-Connect einzeln herunterladen (ohne Repository) · Single download
-
-| System / Gerät · Device | Datei · File |
+| Add-on | Beschreibung · Description |
 |---|---|
-| **LibreELEC – alle Geräte (empfohlen)** · all devices (recommended) | [N-Connect-Kodi-LibreELEC-alle-Geraete.zip](https://github.com/DevCatSKZ/kodi-repo/raw/main/downloads/N-Connect-Kodi-LibreELEC-alle-Geraete.zip) |
-| LibreELEC – Raspberry Pi 4 / 5, 64-Bit-Boxen (Amlogic, Rockchip …) | [N-Connect-Kodi-LibreELEC-RPi4-RPi5-arm64.zip](https://github.com/DevCatSKZ/kodi-repo/raw/main/downloads/N-Connect-Kodi-LibreELEC-RPi4-RPi5-arm64.zip) |
-| LibreELEC – Raspberry Pi 2 / 3 (32 Bit) | [N-Connect-Kodi-LibreELEC-RPi2-RPi3-arm.zip](https://github.com/DevCatSKZ/kodi-repo/raw/main/downloads/N-Connect-Kodi-LibreELEC-RPi2-RPi3-arm.zip) |
-| LibreELEC – PC / Mini-PC (Generic, x86_64) | [N-Connect-Kodi-LibreELEC-PC-x86_64.zip](https://github.com/DevCatSKZ/kodi-repo/raw/main/downloads/N-Connect-Kodi-LibreELEC-PC-x86_64.zip) |
-| Kodi unter Windows · Kodi on Windows | [N-Connect für Windows](https://github.com/DevCatSKZ/N-Connect/releases/latest) installieren – Kodi erkennt die Controller automatisch; das Add-on zeigt zusätzlich Status und Widget |
-| Kodi unter Android · Kodi on Android | N-Connect für Android ab 0.9.1 aus den [Releases](https://github.com/DevCatSKZ/N-Connect/releases) installieren; das Add-on zeigt Status und Widget |
+| **[N-Connect](https://github.com/DevCatSKZ/N-Connect)** (`service.nconnect`) | Switch-2-Controller (Pro Controller 2, Joy-Con 2, GameCube) als Xbox-Controller für Kodi und RetroArch, mit Vibration, Akkuwarnung und Home-Widget. Läuft unter LibreELEC, Batocera und Linux; unter Kodi für Windows und Android zeigt es den Stand der N-Connect-App an. · *Switch 2 controllers as Xbox controllers for Kodi and RetroArch.* |
+| N-Connect Status (`plugin.nconnect.status`) | Widget-Quelle für Skins mit dem älteren Pfad `plugin://plugin.nconnect.status/`. · *Widget source for skins using the older path.* |
+| N-Connect Bundle (`script.nconnect.bundle`) | Installiert beide Add-ons und richtet im Skin Aeon Nox: Silvo einen Menüpunkt mit Widget ein. · *Installs both add-ons and adds a menu entry to Aeon Nox: Silvo.* |
 
-Über das Repository bekommt jedes Gerät automatisch die passende Version. · Via the repository every device gets the right version automatically.
+Geprüft auf einem Raspberry Pi 4 mit LibreELEC 12.2; andere Geräte sind noch ungetestet.
+*Tested on a Raspberry Pi 4 with LibreELEC 12.2; other devices are not tested yet.*
 
-## Installation (Deutsch)
+## Installation
 
-1. Kodi > **Einstellungen > System > Add-ons**: „**Unbekannte Quellen**“ einschalten.
-2. Die Repository-ZIP auf das Gerät bringen – **einer** der beiden Wege:
-   - **[repository.devcatskz.zip](https://github.com/DevCatSKZ/kodi-repo/raw/main/repository.devcatskz.zip)**
-     herunterladen und auf das Gerät kopieren (z. B. per Samba in den Ordner „Downloads“), oder
-   - in Kodi unter **Einstellungen > Dateimanager > Quelle hinzufügen** die Adresse
-     `https://devcatskz.github.io/kodi-repo/` eintragen (GitHub Pages, Name z. B. „DevCatSKZ“).
-3. **Add-ons > Paket-Symbol > Aus ZIP-Datei installieren** > die ZIP aus Schritt 2 wählen (bei der Quelle:
-   „DevCatSKZ“ > `repository.devcatskz` > `repository.devcatskz-….zip`).
-4. **Add-ons > Paket-Symbol > Aus Repository installieren > DevCatSKZ Repository** > Plugin auswählen > **Installieren**.
+1. *Einstellungen › System › Add-ons*: **Unbekannte Quellen** einschalten.
+2. [repository.devcatskz.zip](https://github.com/DevCatSKZ/kodi-repo/raw/main/repository.devcatskz.zip) auf das Gerät
+   kopieren – oder unter *Einstellungen › Dateimanager › Quelle hinzufügen* die Adresse
+   `https://devcatskz.github.io/kodi-repo/` eintragen.
+3. *Add-ons › Aus ZIP-Datei installieren* › `repository.devcatskz.zip` wählen.
+4. *Add-ons › Aus Repository installieren › DevCatSKZ Repository* › Add-on installieren.
 
-Ab jetzt hält Kodi alle Plugins aus diesem Repository automatisch aktuell. Jedes Plugin lässt sich auch einzeln
-installieren: Die ZIP-Dateien liegen in den Ordnern dieses Repositorys (z. B. [`service.nconnect/`](service.nconnect/)).
+*English:* enable **Unknown sources** (*Settings › System › Add-ons*), copy the repository zip to the device or add
+`https://devcatskz.github.io/kodi-repo/` as a file manager source, then *Install from zip file* and
+*Install from repository › DevCatSKZ Repository*.
 
-## Installation (English)
+Einzelne ZIPs je Gerät (ohne automatische Updates) liegen unter [`downloads/`](downloads/) und an den
+[N-Connect-Releases](https://github.com/DevCatSKZ/N-Connect/releases/latest). · *Single ZIPs per device are in
+`downloads/` and on the N-Connect releases page.*
 
-1. Kodi > **Settings > System > Add-ons**: enable "**Unknown sources**".
-2. Get the repository zip onto the device – **one** of these ways:
-   - download **[repository.devcatskz.zip](https://github.com/DevCatSKZ/kodi-repo/raw/main/repository.devcatskz.zip)**
-     and copy it to the device (e.g. via Samba into "Downloads"), or
-   - add `https://devcatskz.github.io/kodi-repo/` as a source under **Settings > File manager > Add source**
-     (GitHub Pages, name it e.g. "DevCatSKZ").
-3. **Add-ons > package icon > Install from zip file** > choose the zip from step 2 (with the source: "DevCatSKZ" >
-   `repository.devcatskz` > `repository.devcatskz-….zip`).
-4. **Add-ons > package icon > Install from repository > DevCatSKZ Repository** > choose a plugin > **Install**.
+## Für Entwickler · For developers
 
-From now on Kodi keeps all plugins from this repository up to date. Every plugin can also be installed on its own:
-the zip files are in the folders of this repository (e.g. [`service.nconnect/`](service.nconnect/)).
+Der Quellcode der N-Connect-Add-ons liegt im [N-Connect-Repository](https://github.com/DevCatSKZ/N-Connect) unter
+`linux/kodi/`. Neue Versionen werden beim Release mit `linux/build-kodi-addon.ps1 -Repo -RepoDir <kodi-repo>` hier
+abgelegt; der Index (`addons.xml`, `.md5`) entsteht mit `tools/build_repo.py`. Eine vorhandene Version wird nie
+überschrieben.
 
-## Für Entwickler / For developers
-
-```
-<addon-id>/<addon-id>-<version>.zip     Add-on-ZIPs (die zwei neuesten Versionen bleiben erhalten)
-addons.xml, addons.xml.md5               Index für Kodi – erzeugt von tools/build_repo.py
-index.html (Wurzel und je Ordner)        Verzeichnisliste für die Dateimanager-Quelle über GitHub Pages
-repository.devcatskz.zip                 aktuelle Repository-ZIP zum direkten Herunterladen
-downloads/                               N-Connect-ZIPs je Gerät unter festem Namen
-```
-
-Der Quellcode aller N-Connect-Add-ons liegt im [N-Connect-Repository](https://github.com/DevCatSKZ/N-Connect) unter
-`linux/kodi/`. Beim Release werden sie von Hand gebaut und hier abgelegt: im N-Connect-Ordner
-`linux/build-kodi-addon.ps1 -Repo -RepoDir <dieses Repository>` ausführen (legt neue Versionen samt `downloads/` ab und
-baut den Index mit `tools/build_repo.py`), danach hier committen und pushen. Eine Version, die hier schon liegt, wird
-nie überschrieben: für ein Update die Version in der `addon.xml` erhöhen.
-Andere Plugins: ZIP nach `<addon-id>/` kopieren, `python tools/build_repo.py` ausführen, committen, pushen.
-
-Kein offizielles Produkt von Nintendo, Microsoft oder Sony. · Not an official Nintendo, Microsoft or Sony product. · MIT-Lizenz
+Inoffizielles Projekt ohne Verbindung zu Nintendo, Sony oder Microsoft. · MIT-Lizenz
