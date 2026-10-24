@@ -282,7 +282,7 @@
     </assets>
   </extension>
 </addon>
-<addon id="script.moonlight.devcat" name="Moonlight Stream Client" version="0.2.0" provider-name="DevCatSKZ">
+<addon id="script.moonlight.devcat" name="Moonlight Stream Client" version="0.2.1" provider-name="DevCatSKZ">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -300,7 +300,8 @@
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <news>0.2.0 — Neue Add-on-Kennung script.moonlight.devcat (die alte ID wurde vom LibreELEC-Repo durch ein leeres „removed“-Add-on ersetzt). Pairing zeigt die PIN sofort; Runtime-Installation aus dem Menü ohne Compiler; Start klappt auch nach einem Absturz; Kodi kommt auch bei SIGTERM zurück; TV-Fernbedienung/Remote-Apps als Gamepad, Exit lang drücken beendet den Stream; Controller-Dienst (SKZ/N-Connect) läuft weiter; Host-Menü (App beenden, neu paaren, entfernen); Bildrate einstellbar; Bildmodus für Streams (gegen 4K@30).
+    <news>0.2.1 — Menüs auf Deutsch (die deutsche Sprachdatei wurde nie geladen); Bildmodus-Abfrage gekürzt, damit sie in jeden Skin passt.
+0.2.0 — Neue Add-on-Kennung script.moonlight.devcat (die alte ID wurde vom LibreELEC-Repo durch ein leeres „removed“-Add-on ersetzt). Pairing zeigt die PIN sofort; Runtime-Installation aus dem Menü ohne Compiler; Start klappt auch nach einem Absturz; Kodi kommt auch bei SIGTERM zurück; TV-Fernbedienung/Remote-Apps als Gamepad, Exit lang drücken beendet den Stream; Controller-Dienst (SKZ/N-Connect) läuft weiter; Host-Menü (App beenden, neu paaren, entfernen); Bildrate einstellbar; Bildmodus für Streams (gegen 4K@30).
 0.1.1 — Audio-Routing und Kodi-Suspend-Launcher.
 0.1.0 — Gerüst.</news>
   </extension>
@@ -381,7 +382,7 @@
         </assets>
     </extension>
 </addon>
-<addon id="script.steamlink" name="Steam Link" version="0.1.4" provider-name="DevCatSKZ">
+<addon id="script.steamlink" name="Steam Link" version="0.1.5" provider-name="DevCatSKZ">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -399,7 +400,8 @@
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <news>0.1.4 — Start klappt wieder nach einem Absturz (systemd-run --collect), Kodi kommt auch bei SIGTERM zurück; CEC-Fernbedienung funktioniert (cec-client-Aufruf korrigiert, Exit lang drücken beendet); Remote-Apps auch über HTTP :8080 mit Kodi-Login; Tastenbelegung wie echtes Xbox-360-Pad; HDMI-Anschluss automatisch; Controller-Dienst (SKZ/N-Connect) läuft während Steam Link weiter; Bildmodus für Streams (gegen 4K@30); Downloads per HTTPS mit SHA256-Prüfung.
+    <news>0.1.5 — Menüs auf Deutsch (die deutsche Sprachdatei wurde nie geladen); Bildmodus-Abfrage gekürzt, damit sie in jeden Skin passt.
+0.1.4 — Start klappt wieder nach einem Absturz (systemd-run --collect), Kodi kommt auch bei SIGTERM zurück; CEC-Fernbedienung funktioniert (cec-client-Aufruf korrigiert, Exit lang drücken beendet); Remote-Apps auch über HTTP :8080 mit Kodi-Login; Tastenbelegung wie echtes Xbox-360-Pad; HDMI-Anschluss automatisch; Controller-Dienst (SKZ/N-Connect) läuft während Steam Link weiter; Bildmodus für Streams (gegen 4K@30); Downloads per HTTPS mit SHA256-Prüfung.
 0.1.3 — Beenden-Pfade zurück zu Kodi (Remote-App, CEC, Menüpunkt).
 0.1.2 — Eingabe-Brücke: TV-Fernbedienung (CEC) + Remote-Apps (Kore/Yatse, JSON-RPC :9090) steuern ein virtuelles Xbox-360-Gamepad für Steam Link; udev-Regeln für Controller.
 0.1.1 — Fetcher: Dangling-Symlink-Reparatur nach dem Entpacken (Valve-Tarball hat Symlink-Einträge, deren Ziele später folgen).
@@ -459,7 +461,7 @@
     </assets>
   </extension>
 </addon>
-<addon id="service.sunshine" name="Sunshine Game Stream Host" version="0.1.3" provider-name="DevCatSKZ">
+<addon id="service.sunshine" name="Sunshine Game Stream Host" version="0.1.4" provider-name="DevCatSKZ">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -478,7 +480,8 @@
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <news>0.1.3 — Menü „Sunshine starten“ und „Runtime installieren“ funktionieren (vorher immer Fehler); Installer lädt die neueste LizardByte-Version samt Bibliotheken per HTTPS mit SHA256-Prüfung; Watchdog startet Sunshine nach einem Absturz neu; Web-UI-Port korrekt (Sunshine-Basisport = Web-UI-Port − 1); Ton-Ausgabe folgt dem angeschlossenen HDMI-Port; Kodi-Audio per Menü auf PulseAudio; Log-Anzeige.
+    <news>0.1.4 — Menüs auf Deutsch (die deutsche Sprachdatei wurde nie geladen); Status zeigt die Version auch bei älteren Runtimes und Kodis aktuelle Audio-Einstellung; Hinweis passt in den Dialog; Installer zeigt Paketnamen statt URLs.
+0.1.3 — Menü „Sunshine starten“ und „Runtime installieren“ funktionieren (vorher immer Fehler); Installer lädt die neueste LizardByte-Version samt Bibliotheken per HTTPS mit SHA256-Prüfung; Watchdog startet Sunshine nach einem Absturz neu; Web-UI-Port korrekt (Sunshine-Basisport = Web-UI-Port − 1); Ton-Ausgabe folgt dem angeschlossenen HDMI-Port; Kodi-Audio per Menü auf PulseAudio; Log-Anzeige.
 0.1.2 — /usr/share per overlayfs statt Symlink-Spiegel.
 0.1.1 — runtime_dir-Fix, Pulse-Sink-Retry.
 0.1.0 — Erster Release: KMS-Capture + libx264 auf LibreELEC aarch64.</news>
