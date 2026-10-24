@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.program.catnewz" name="Catnewz" version="1.2.6" provider-name="DevCatSKZ">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <!-- Skript zuerst: Programme › Catnewz öffnet die Startseite; der Plugin-Teil liefert
+       Listen und Widgets (plugin://plugin.program.catnewz/…), sichtbar unter Video-Add-ons. -->
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="login"/>
+  <extension point="xbmc.addon.metadata">
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <summary lang="de_DE">Katzen-News nach Stimmung sortiert</summary>
+    <summary lang="en_GB">Cat news, sorted by mood</summary>
+    <summary lang="es_ES">Noticias de gatos, ordenadas por ánimo</summary>
+    <summary lang="fr_FR">Des news de chats, triées par humeur</summary>
+    <summary lang="it_IT">Notizie di gatti, ordinate per umore</summary>
+    <description lang="de_DE">Catnewz sammelt Katzen-Nachrichten aus vielen Quellen und sortiert sie automatisch nach Stimmung – positiv, neutral, negativ. Themen wie „Sucht ein Zuhause“, Rettungen und Tierheim, Meldungen aus deiner Region, Merkliste, Suche und ein Lesemodus direkt in Kodi. Ohne Werbung, ohne Tracking, ohne Konto.</description>
+    <description lang="en_GB">Catnewz collects cat news from many sources and sorts it by mood automatically – positive, neutral, negative. Topics like “Looking for a home”, rescues and shelters, news from your area, a saved list, search and a reader mode right inside Kodi. No ads, no tracking, no account.</description>
+    <description lang="es_ES">Catnewz reúne noticias de gatos de muchas fuentes y las ordena automáticamente por ánimo: positivas, neutras, negativas. Temas como «Busca hogar», rescates y protectoras, noticias de tu región, lista de guardados, búsqueda y modo lectura dentro de Kodi. Sin publicidad, sin rastreo, sin cuenta.</description>
+    <description lang="fr_FR">Catnewz rassemble des actus de chats de nombreuses sources et les trie automatiquement par humeur – positives, neutres, négatives. Thèmes comme « Cherche une famille », sauvetages et refuges, actus de votre région, liste enregistrée, recherche et mode lecture directement dans Kodi. Sans pub, sans pistage, sans compte.</description>
+    <description lang="it_IT">Catnewz raccoglie notizie di gatti da molte fonti e le ordina automaticamente per umore: positive, neutre, negative. Temi come «Cerca casa», salvataggi e gattili, notizie della tua zona, elenco salvati, ricerca e modalità lettura direttamente in Kodi. Senza pubblicità, senza tracciamento, senza account.</description>
+    <disclaimer lang="de_DE">Catnewz zeigt Nachrichten von Drittanbietern (u. a. Bing News, Google News, Verlags-Websites); die Inhalte gehören den jeweiligen Anbietern.</disclaimer>
+    <disclaimer lang="en_GB">Catnewz shows news from third parties (incl. Bing News, Google News, publisher websites); the content belongs to the respective providers.</disclaimer>
+    <platform>all</platform>
+    <license>Proprietary – © 2026 DevCatSKZ</license>
+    <website>https://devcatskz.github.io/Catnewz/</website>
+    <source>https://github.com/DevCatSKZ/kodi-repo</source>
+    <news>1.2.6 – Nur Texte: deutsche Kurzbeschreibung korrigiert (nach Stimmung, nicht „positiv“ sortiert).
+1.2.5 – Werbung wird jetzt auch erkannt, wenn sie erst im nachgeladenen Teaser oder hinter dem aufgelösten Link sichtbar wird. Bilder kommen schneller an: Google-Links werden gebündelt aufgelöst (eine Anfrage für alle statt je eine), und der Bild-Nachlauf läuft auch dann weiter, wenn eine Aktualisierung fehlschlägt.
+1.2.4 – Filter &amp; Sortierung (und andere Aktions-Einträge) hängen nicht mehr in einem Lade-Fenster, auch nicht als Widget.
+1.2.3 – Doppelte Meldungen: dieselbe Nachricht, die mehrere Zeitungen mit eigenem Titel und Text bringen (z.B. Polizeiberichte), erscheint nur noch einmal; bereits gespeicherte Doppelte werden beim Aktualisieren aufgeräumt.
+1.2.2 – Bilder: Das Add-on lädt Artikelbilder jetzt selbst und prüft sie, statt sich auf Kodis Bildlader zu verlassen. Dadurch erscheinen viele Bilder, die vorher nur das Logo zeigten.
+1.2.1 – Doppelte Meldungen: dieselbe Nachricht aus mehreren Quellen mit gleichem Teaser, aber anderem Titel, erscheint nur noch einmal; schon gespeicherte Doppelte werden beim Aktualisieren aufgeräumt.
+1.2.0 – Neue Startseite beim Öffnen: Kopf mit Uhrzeit, Menü, „Gute Nachricht des Tages“ und bis zu sechs Kachel-Reihen (frei wählbar, große oder kleine Kacheln, per Menü-Taste direkt anpassbar). Hologlas-Hintergrund und gestochen scharfe Grafiken für Full HD, 1440p, 4K, 21:9 und 32:9. Miau-Sound wie in der App (Lautsprecher-Knopf oder Einstellungen › Darstellung › Extras, Standard aus). Listen und Widgets wie bisher (Video-Add-ons).
+1.1.0 – Klarere Stimmungen (Positiv nur gute Nachrichten, Traurige nicht mehr unter Neutral, Vermittlungen einheitlich positiv); Filter &amp; Sortierung direkt in jeder Liste (Stimmung, Thema, Region kombinierbar); Meldungen ausblenden; Quellen verwalten und eigene RSS-Quellen; „Weniger davon“ einzeln zurücknehmen; Ansichten Karten/Holo/Vollbild/Kompakt/Magazin; Bilder an/aus; relative Zeitangaben; Trennlinie „Bis hier neu“; Lesemodus mit Schriftgröße und Lesefläche Dunkel/Hell/Sepia.
+1.0.3 – Logo im Hintergrund mittig über dem Bildfeld des Skins; bleibt auch beim Zoomen des Skins ganz sichtbar.
+1.0.2 – Catnewz-Logo wieder im Hintergrund, oben rechts im freien Bereich (nicht mehr von Liste und Infotafel verdeckt); einheitlicher Hintergrund für alle Einträge.
+1.0.1 – Hintergrund ohne großes Logo (passt zu Skins mit Vollbild-Fanart); jetzt im DevCatSKZ Repository.
+1.0.0 – Erste Version: Stimmungs-Filter, Themen, Region, Merkliste, Suche, Lesemodus, Hintergrund-Aktualisierung.</news>
+    <assets>
+      <icon>icon.png</icon>
+      <fanart>resources/media/backdrop-4.png</fanart>
+    </assets>
+  </extension>
+</addon>
+<addon id="plugin.skzconnect.status" name="SKZ Connect Status" version="1.1.4" provider-name="devcatskz">
+    <!-- Ältere Widget-Quelle für Skins (plugin://plugin.skzconnect.status/). Die Anzeige liegt in service.skzconnect
+         (plugin.py) – dieses Add-on leitet nur weiter, damit bestehende Widget-Einstellungen weiter funktionieren.
+         Das Symbol (resources/icon.png) legt linux/build-kodi-addon.ps1 beim Packen hinein. -->
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="service.skzconnect" version="0.3.4"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="de_DE">Verbundene Controller als Widget</summary>
+        <summary lang="en_GB">Connected controllers as a widget</summary>
+        <summary lang="es_ES">Mandos conectados como widget</summary>
+        <summary lang="fr_FR">Manettes connectées en widget</summary>
+        <summary lang="it_IT">Controller connessi come widget</summary>
+        <summary lang="pt_PT">Comandos ligados como widget</summary>
+        <summary lang="pt_BR">Controles conectados como widget</summary>
+        <summary lang="nl_NL">Verbonden controllers als widget</summary>
+        <summary lang="pl_PL">Połączone kontrolery jako widżet</summary>
+        <summary lang="ru_RU">Подключённые контроллеры в виде виджета</summary>
+        <summary lang="ja_JP">接続中のコントローラーをウィジェットに表示</summary>
+        <summary lang="zh_CN">以小部件显示已连接的手柄</summary>
+        <summary lang="ko_KR">연결된 컨트롤러를 위젯으로 표시</summary>
+        <description lang="de_DE">Zeigt die über SKZ Connect verbundenen Controller (Name, Akku, Ladestatus) und bekannte, gerade nicht verbundene als Liste an. Für Skin-Widgets mit dem älteren Pfad plugin://plugin.skzconnect.status/ – die Anzeige kommt aus SKZ Connect (service.skzconnect).</description>
+        <description lang="en_GB">Lists the controllers connected via SKZ Connect (name, battery, charging) and known ones that are currently not connected. For skin widgets with the older path plugin://plugin.skzconnect.status/ – the display comes from SKZ Connect (service.skzconnect).</description>
+        <description lang="es_ES">Muestra en una lista los mandos conectados mediante SKZ Connect (nombre, batería, carga) y los conocidos que ahora no están conectados. Para widgets de skin con la ruta antigua plugin://plugin.skzconnect.status/; la vista procede de SKZ Connect (service.skzconnect).</description>
+        <description lang="fr_FR">Affiche sous forme de liste les manettes connectées via SKZ Connect (nom, batterie, charge) et les manettes connues actuellement déconnectées. Pour les widgets de skin utilisant l'ancien chemin plugin://plugin.skzconnect.status/ – l'affichage provient de SKZ Connect (service.skzconnect).</description>
+        <description lang="it_IT">Mostra in un elenco i controller collegati tramite SKZ Connect (nome, batteria, ricarica) e quelli noti al momento non collegati. Per i widget delle skin con il vecchio percorso plugin://plugin.skzconnect.status/ – la visualizzazione proviene da SKZ Connect (service.skzconnect).</description>
+        <description lang="pt_PT">Mostra numa lista os comandos ligados através do SKZ Connect (nome, bateria, carregamento) e os conhecidos que de momento não estão ligados. Para widgets de skin com o caminho antigo plugin://plugin.skzconnect.status/ – a apresentação vem do SKZ Connect (service.skzconnect).</description>
+        <description lang="pt_BR">Mostra em uma lista os controles conectados pelo SKZ Connect (nome, bateria, carregamento) e os conhecidos que no momento não estão conectados. Para widgets de skin com o caminho antigo plugin://plugin.skzconnect.status/ – a exibição vem do SKZ Connect (service.skzconnect).</description>
+        <description lang="nl_NL">Toont de via SKZ Connect verbonden controllers (naam, batterij, opladen) en bekende controllers die nu niet verbonden zijn als lijst. Voor skin-widgets met het oudere pad plugin://plugin.skzconnect.status/ – de weergave komt van SKZ Connect (service.skzconnect).</description>
+        <description lang="pl_PL">Wyświetla listę kontrolerów połączonych przez SKZ Connect (nazwa, bateria, ładowanie) oraz znanych, które nie są teraz połączone. Dla widżetów skórek ze starszą ścieżką plugin://plugin.skzconnect.status/ – widok pochodzi z SKZ Connect (service.skzconnect).</description>
+        <description lang="ru_RU">Показывает списком контроллеры, подключённые через SKZ Connect (имя, заряд, зарядка), а также известные, но сейчас не подключённые. Для виджетов скинов со старым путём plugin://plugin.skzconnect.status/ – отображение берётся из SKZ Connect (service.skzconnect).</description>
+        <description lang="ja_JP">SKZ Connect で接続中のコントローラー（名前、バッテリー、充電）と、既知で現在未接続のコントローラーを一覧表示します。旧パス plugin://plugin.skzconnect.status/ を使うスキンのウィジェット用です。表示内容は SKZ Connect（service.skzconnect）から取得します。</description>
+        <description lang="zh_CN">以列表显示通过 SKZ Connect 连接的手柄（名称、电量、充电状态）以及已知但当前未连接的手柄。用于使用旧路径 plugin://plugin.skzconnect.status/ 的皮肤小部件——显示内容来自 SKZ Connect（service.skzconnect）。</description>
+        <description lang="ko_KR">SKZ Connect로 연결된 컨트롤러(이름, 배터리, 충전)와 알려져 있지만 지금은 연결되지 않은 컨트롤러를 목록으로 보여 줍니다. 이전 경로 plugin://plugin.skzconnect.status/를 쓰는 스킨 위젯용이며, 표시 내용은 SKZ Connect(service.skzconnect)에서 가져옵니다.</description>
+        <platform>all</platform>
+        <license>MIT</license>
+        <source>https://github.com/DevCatSKZ/SKZ-Connect</source>
+        <website>https://github.com/DevCatSKZ/SKZ-Connect</website>
+        <news>1.1.4: Neues Icon[CR]1.1.2–1.1.3: Heißt jetzt SKZ Connect Status, neue Kennung plugin.skzconnect.status[CR]1.1.1: Quellcode im SKZ-Connect-Repository, Anbieter devcatskz, Beschreibung in 12 Sprachen – Anzeige unverändert (kommt aus service.skzconnect)[CR]1.1.0: Widget zeigt auch bekannte, gerade nicht verbundene Controller und lädt sich bei Änderungen selbst neu</news>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+<addon id="plugin.video.newpipe" name="NewPipe MOD" version="1.4.56+repo.1" provider-name="Twilight0 | MOD: @TrainAgain2">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video audio</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/service.py" start="login" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">NewPipe MOD — Original creator: Twilight0 | MOD: @TrainAgain2</summary>
+        <description lang="en">YouTube without an account: search, channels, playlists and local subscriptions stay on your device. Optional sign-in via yt.be/activate. Self-contained ZIP. Original by Twilight0, MOD by @TrainAgain2.</description>
+        <description lang="de_DE">YouTube ohne Konto: Suche, Kanäle, Playlists und lokale Abos bleiben auf dem Gerät. Optionale Anmeldung über yt.be/activate. Eigenständige ZIP. Original: Twilight0, MOD: @TrainAgain2.</description>
+        <disclaimer lang="en">This addon does not host or distribute any content; it only browses publicly available YouTube pages. Optional account linking stores its session token only in the local Kodi add-on profile.</disclaimer>
+        <disclaimer lang="de_DE">Dieses Add-on hostet oder verbreitet keine Inhalte; es ruft nur öffentliche YouTube-Seiten ab. Bei optionaler Anmeldung bleibt das Token im lokalen Kodi-Profil.</disclaimer>
+        <language>en</language>
+        <license>GPL-3.0-only</license>
+        <source>https://github.com/Twilight0/plugin.video.newpipe</source>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <banner>resources/media/banner.jpg</banner>
+            <clearlogo>resources/media/clearlogo.png</clearlogo>
+        </assets>
+    </extension>
+</addon>
+<addon id="plugin.video.youtube" name="YouTube" version="7.4.4+unofficial.1" provider-name="anxdpanic, bromix, MoojMidge">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.27.1"/>
+        <import addon="inputstream.adaptive" version="19.0.0"/>
+        <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true"/>
+        <import addon="script.module.pysocks" optional="true"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/plugin.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point="xbmc.python.module" library="resources/lib/"/>
+    <extension point="xbmc.python.script" library="resources/lib/script.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <assets>
+            <icon>resources/media/icon.png</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+        </assets>
+        <platform>all</platform>
+        <license>GPL-2.0-only</license>
+        <forum>https://ytaddon.panicked.xyz/forum</forum>
+        <website>https://www.youtube.com</website>
+        <source>https://github.com/anxdpanic/plugin.video.youtube</source>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <summary lang="bg_BG">Добавка за YouTube</summary>
+        <summary lang="bs_BA">Dodatak za YouTube</summary>
+        <summary lang="cs_CZ">Plugin pro YouTube</summary>
+        <summary lang="da_DK">Plugin til YouTube</summary>
+        <summary lang="de_DE">Plugin für YouTube</summary>
+        <summary lang="el_GR">Πρόσθετο για το YouTube</summary>
+        <summary lang="en_GB">Plugin for YouTube</summary>
+        <summary lang="eo">Aldonaĵo por YouTube</summary>
+        <summary lang="es_ES">Complemento para YouTube</summary>
+        <summary lang="es_MX">Complemento para YouTube</summary>
+        <summary lang="et_EE">YouTube lisamoodul</summary>
+        <summary lang="fi_FI">YouTube-lisäosa</summary>
+        <summary lang="fr_FR">Plugin pour YouTube</summary>
+        <summary lang="ga">Breiseán do YouTube</summary>
+        <summary lang="he_IL">תוסף עבור YouTube</summary>
+        <summary lang="hr_HR">Dodatak za YouTube</summary>
+        <summary lang="hu_HU">YouTube kiegészítő</summary>
+        <summary lang="id_ID">Pengaya untuk YouTube</summary>
+        <summary lang="it_IT">Plugin per YouTube</summary>
+        <summary lang="ko_KR">유튜브 플러그인</summary>
+        <summary lang="nb_NO">Tillegg for YouTube</summary>
+        <summary lang="nl_NL">Plugin voor YouTube</summary>
+        <summary lang="pl_PL">Wtyczka YouTube</summary>
+        <summary lang="pt_BR">Plugin para YouTube</summary>
+        <summary lang="ro_RO">Modul pentru YouTube</summary>
+        <summary lang="ru_RU">Видеодополнение YouTube</summary>
+        <summary lang="sk_SK">Doplnok pre YouTube</summary>
+        <summary lang="sv_SE">Insticksmodul för YouTube</summary>
+        <summary lang="tr_TR">YouTube için eklenti</summary>
+        <summary lang="uk_UA">Додаток для YouTube</summary>
+        <summary lang="vi_VN">Plugin dành cho YouTube</summary>
+        <summary lang="zh_CN">油管插件</summary>
+        <summary lang="zh_TW">YouTube附加元件</summary>
+        <description lang="bg_BG">YouTube е един от най-големите уеб сайтове за споделяне на видео в целия свят.</description>
+        <description lang="bs_BA">YouTube je jedna od najvećih svjetskih web stranica za dijeljenje videozapisa.</description>
+        <description lang="cs_CZ">YouTube je jedna z největších webových stránek světa sdílející video.</description>
+        <description lang="da_DK">YouTube er et af verdens største videodelingswebsteder.</description>
+        <description lang="de_DE">YouTube ist eines der größten Video-Sharing-Websites der Welt.</description>
+        <description lang="el_GR">Το YouTube είναι μία από τις μεγαλύτερες ιστοσελίδες διαμοιρασμού βίντεο στον κόσμο.</description>
+        <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world.</description>
+        <description lang="es_ES">YouTube es uno de los sitios web para compartir vídeos más grandes del mundo.</description>
+        <description lang="es_MX">YouTube es uno de los más grandes sitios web de intercambio de videos del mundo.</description>
+        <description lang="fi_FI">YouTube on yksi maailman suurimmista videoiden jakosivustoista.</description>
+        <description lang="fr_FR">YouTube est l'un des plus grands sites de partage vidéos du monde.</description>
+        <description lang="he_IL">YouTube הוא אחד מאתרי שיתוף הווידאו הגדולים בעולם.</description>
+        <description lang="hr_HR">YouTube je jedna od najvećih stranica za dijeljenje video sadržaja na svijetu.</description>
+        <description lang="hu_HU">A YouTube világ egyik legnagyobb videómegosztó weboldala.</description>
+        <description lang="id_ID">YouTube adalah salah satu situs web berbagi video terbesar di dunia.</description>
+        <description lang="it_IT">YouTube è uno dei più grandi siti di condivisione video del mondo.</description>
+        <description lang="ko_KR">유튜브는 세상에서 가장 큰 동영상 공유 사이트 중의 하나입니다.</description>
+        <description lang="nb_NO">YouTube er en av verdens største nettsider for videodeling.</description>
+        <description lang="nl_NL">YouTube is een van de grootste videodelenwebsite in de hele wereld.</description>
+        <description lang="pl_PL">YouTube jest jednym z największych na świecie serwisów udostępniania wideo.</description>
+        <description lang="pt_BR">O YouTube é um dos maiores sites de compartilhamento de vídeos do mundo.</description>
+        <description lang="ro_RO">YouTube este unul dintre cele mai mari saituri de distribuire de videoclipuri din lume.</description>
+        <description lang="ru_RU">YouTube - популярнейший видеохостинговый сайт, предоставляющий пользователям услуги хранения, доставки и показа видео.</description>
+        <description lang="sk_SK">YouTube je jednou z najväčších stránok na zdieľanie videa na svete.</description>
+        <description lang="sv_SE">YouTube är en av världens största webbplatser för videodelning.</description>
+        <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir.</description>
+        <description lang="uk_UA">YouTube є одним з найбільших відеохостингів в світі.</description>
+        <description lang="vi_VN">YouTube là một trong những trang web chia sẻ video lớn nhất trên thế giới.</description>
+        <description lang="zh_CN">油管是世界上最大的视频分享网站之一。</description>
+        <description lang="zh_TW">Youtube 是全世界最大的影片分享網站。</description>
+        <disclaimer lang="bs_BA">Ovaj dodatak nije odobren od strane Googlea</disclaimer>
+        <disclaimer lang="cs_CZ">Tento plugin není schválen společností Google</disclaimer>
+        <disclaimer lang="da_DK">Dette plugin er ikke godkendt af Google</disclaimer>
+        <disclaimer lang="de_DE">Dieses Plugin ist nicht von Google befürwortet</disclaimer>
+        <disclaimer lang="el_GR">Η παρούσα μικροεφαρμογή δεν έχει υϊοθετηθεί από την Google</disclaimer>
+        <disclaimer lang="en_GB">This plugin is not endorsed by Google</disclaimer>
+        <disclaimer lang="eo">Tiu aldonaĵo ne estas aprobita de Google</disclaimer>
+        <disclaimer lang="es_ES">Este add-on no está respaldado por Google</disclaimer>
+        <disclaimer lang="es_MX">Este complemento no está respaldado por Google</disclaimer>
+        <disclaimer lang="fi_FI">Google ei tue tätä lisäosaa</disclaimer>
+        <disclaimer lang="fr_FR">Ce module n'est pas validé par Google</disclaimer>
+        <disclaimer lang="hr_HR">Ovaj dodatak nije podržan od strane Googlea</disclaimer>
+        <disclaimer lang="id_ID">Plugin ini tidak didukung oleh Google</disclaimer>
+        <disclaimer lang="it_IT">Questo plugin non è approvato da Google</disclaimer>
+        <disclaimer lang="ko_KR">이 플러그인은 Google의 허가를 받지 않았습니다</disclaimer>
+        <disclaimer lang="nl_NL">Deze plug-in wordt niet door Google ondersteund</disclaimer>
+        <disclaimer lang="pl_PL">Ta wtyczka nie jest zatwierdzona przez Google</disclaimer>
+        <disclaimer lang="pt_BR">Este plugin não é recomendado pelo Google</disclaimer>
+        <disclaimer lang="ro_RO">Acest modul nu este susținut de Google</disclaimer>
+        <disclaimer lang="ru_RU">Плагин не поддерживается Google</disclaimer>
+        <disclaimer lang="sk_SK">Tento doplnok nie je schválený spoločnosťou Google</disclaimer>
+        <disclaimer lang="sv_SE">Denna insticksmodul är inte godkänd av Google</disclaimer>
+        <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
+        <disclaimer lang="uk_UA">Цей додаток не має відношення до компанії Google</disclaimer>
+        <disclaimer lang="vi_VN">Plugin này không được xác nhận bởi Google</disclaimer>
+        <disclaimer lang="zh_CN">此插件未被谷歌认可</disclaimer>
+        <disclaimer lang="zh_TW">此附加元件未由Google支持</disclaimer>
+    <news>## v7.4.4
+### Fixed
+- Fix not including FolderPath in current container details
+- Fix current plugin item window properties sometimes not updating correctly
+- Fix not updating remote history upon consecutive playback events for certain video types
+- Fix using unimplemented change to localisation identifier when showing API config page address
+- Fix play uri parameters/properties not being able to be forced off
+- Limit retrying feeds that cannot be accessed
+
+### Changed
+- Improve responsiveness of service loop upon plugin invocation
+- Log redacted visitorData details
+- More aggressively utilise cached data for My Subscriptions feed failures
+
+### New
+- Add option to play YouTube error notification video upon playback failure</news></extension>
+</addon>
+<addon id="repository.devcatskz" name="DevCatSKZ Repository" version="1.0.9" provider-name="devcatskz">
+  <!-- Add-on-Quelle für alle Kodi-Plugins von DevCatSKZ (SKZ Connect und künftige). Inhalt: GitHub-Repo
+       DevCatSKZ/kodi-repo (addons.xml, Prüfsummen, ZIPs), erzeugt mit repo-tools/build_repo.py. -->
+  <extension point="xbmc.addon.repository" name="DevCatSKZ Repository">
+    <dir>
+      <info compressed="false">https://raw.githubusercontent.com/DevCatSKZ/kodi-repo/main/addons.xml</info>
+      <checksum>https://raw.githubusercontent.com/DevCatSKZ/kodi-repo/main/addons.xml.md5</checksum>
+      <datadir zip="true">https://raw.githubusercontent.com/DevCatSKZ/kodi-repo/main/</datadir>
+      <hashes>sha256</hashes>
+    </dir>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="de_DE">Alle Kodi-Plugins von DevCatSKZ – mit automatischen Updates</summary>
+    <summary lang="en_GB">All Kodi plugins by DevCatSKZ – with automatic updates</summary>
+    <description lang="de_DE">Einmal installieren – danach stehen alle DevCatSKZ-Plugins unter „Aus Repository installieren“ und bleiben automatisch aktuell. Enthalten: SKZ Connect (Controller per Bluetooth), Catnewz (Katzen-News), VeraCrypt Manager, Sunshine/Moonlight (Game-Streaming), NewPipe MOD und YouTube.</description>
+    <description lang="en_GB">Install once – all DevCatSKZ plugins then appear under "Install from repository" and stay up to date automatically. Includes: SKZ Connect (controllers via Bluetooth), Catnewz (cat news), VeraCrypt Manager, Sunshine/Moonlight (game streaming), NewPipe MOD and YouTube.</description>
+    <platform>all</platform>
+    <license>MIT</license>
+    <source>https://github.com/DevCatSKZ/kodi-repo</source>
+    <website>https://github.com/DevCatSKZ/kodi-repo</website>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+<addon id="script.moonlight" name="Moonlight Stream Client" version="0.1.1" provider-name="DevCatSKZ">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="de_DE">Moonlight Game-Stream-Client</summary>
+    <summary lang="en_GB">Moonlight game stream client</summary>
+    <description lang="de_DE">Spielt Sunshine-/GameStream-Streams auf dem Fernseher ab (moonlight-embedded, dispmanx-Overlay parallel zu Kodi). Noch im Aufbau — Runtime wird auf dem Gerät kompiliert.</description>
+    <description lang="en_GB">Plays Sunshine/GameStream streams on the TV (moonlight-embedded, dispmanx overlay alongside Kodi). Work in progress — runtime is compiled on-device.</description>
+    <platform>all</platform>
+    <license>GPL-3.0-only</license>
+    <source>https://github.com/moonlight-stream/moonlight-embedded</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+    <news>0.1.0 — Gerüst. moonlight-embedded-Runtime folgt (On-Device-Build).</news>
+  </extension>
+</addon>
+<addon id="script.service.veracrypt"
+       name="VeraCrypt Manager"
+       version="1.0.1"
+       provider-name="DevCatSKZ">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="startup"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Mount and manage VeraCrypt volumes</summary>
+    <summary lang="de_DE">VeraCrypt-Volumes einbinden und verwalten</summary>
+    <description lang="en_GB">Unlock disks, partitions or containers with a VeraCrypt password. Optional: encrypted vault, master password after reboot, auto-mount via keyfile. Volumes mount read-only.</description>
+    <description lang="de_DE">Festplatten, Partitionen oder Container per VeraCrypt-Passwort entsperren. Optional: verschlüsselter Tresor, Master-Passwort nach Neustart, Auto-Einbinden per Schlüsseldatei. Volumes werden schreibgeschützt eingebunden.</description>
+    <disclaimer lang="en_GB">Encrypted volumes cannot be detected reliably before unlocking; the add-on lists possible candidates. Storing keys on the same device weakens protection against theft.</disclaimer>
+    <disclaimer lang="de_DE">Verschlüsselte Volumes sind vor dem Entsperren nicht sicher erkennbar; das Add-on zeigt mögliche Kandidaten. Schlüssel auf demselben Gerät schwächen den Schutz bei Diebstahl.</disclaimer>
+    <platform>all</platform>
+    <license>Apache-2.0</license>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+    </assets>
+    <news>1.0.1: Nur Metadaten – Anbieter korrigiert, Platzhalter-Quelle entfernt, kürzere Beschreibungen.[CR]1.0.0: Initial release – mount/unmount of existing VeraCrypt volumes, credential vault, auto-mount policies.</news>
+  </extension>
+</addon>
+<addon id="script.skzconnect.bundle" name="SKZ Connect Bundle Installer" version="1.0.6" provider-name="devcatskz">
+    <!-- Offline-Installer: bringt service.skzconnect und plugin.skzconnect.status als ZIPs mit (resources/data). Die ZIPs
+         und das Symbol legt linux/build-kodi-addon.ps1 beim Packen hinein – jeweils die aktuelle Version. Bei jeder
+         neuen service.skzconnect- oder Plugin-Version auch hier die Version erhöhen (das Build-Skript prüft das).
+         Texte der Dialoge: resources/language (erzeugt von linux/kodi/i18n/generate.py aus tr_bundle.py). -->
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="login"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="de_DE">SKZ Connect und Status-Widget in einem Paket</summary>
+        <summary lang="en_GB">SKZ Connect and status widget in one package</summary>
+        <summary lang="es_ES">SKZ Connect y widget de estado en un solo paquete</summary>
+        <summary lang="fr_FR">SKZ Connect et widget d'état en un seul paquet</summary>
+        <summary lang="it_IT">SKZ Connect e widget di stato in un unico pacchetto</summary>
+        <summary lang="pt_PT">SKZ Connect e widget de estado num só pacote</summary>
+        <summary lang="pt_BR">SKZ Connect e widget de status em um só pacote</summary>
+        <summary lang="nl_NL">SKZ Connect en statuswidget in één pakket</summary>
+        <summary lang="pl_PL">SKZ Connect i widżet stanu w jednym pakiecie</summary>
+        <summary lang="ru_RU">SKZ Connect и виджет состояния в одном пакете</summary>
+        <summary lang="ja_JP">SKZ Connect とステータスウィジェットをまとめたパッケージ</summary>
+        <summary lang="zh_CN">SKZ Connect 与状态小部件合一安装包</summary>
+        <summary lang="ko_KR">SKZ Connect와 상태 위젯을 한 패키지로</summary>
+        <description lang="de_DE">Installiert SKZ Connect (Controller-Dienst) und das Status-Widget (plugin.skzconnect.status) in einem Schritt. Trägt bei Aeon Nox Silvo automatisch den Menüpunkt samt Widget ein. Danach Kodi neu starten.</description>
+        <description lang="en_GB">Installs SKZ Connect (controller service) and the status widget (plugin.skzconnect.status) in one step. On Aeon Nox Silvo it also adds the menu entry with its widget. Restart Kodi afterwards.</description>
+        <description lang="es_ES">Instala SKZ Connect (servicio de mandos) y el widget de estado (plugin.skzconnect.status) en un solo paso. En Aeon Nox Silvo añade además la entrada de menú con su widget. Después, reinicia Kodi.</description>
+        <description lang="fr_FR">Installe SKZ Connect (service de manettes) et le widget d'état (plugin.skzconnect.status) en une seule étape. Sous Aeon Nox Silvo, ajoute aussi l'entrée de menu avec son widget. Redémarrez ensuite Kodi.</description>
+        <description lang="it_IT">Installa SKZ Connect (servizio controller) e il widget di stato (plugin.skzconnect.status) in un solo passaggio. Con Aeon Nox Silvo aggiunge anche la voce di menu con il relativo widget. Poi riavvia Kodi.</description>
+        <description lang="pt_PT">Instala o SKZ Connect (serviço de comandos) e o widget de estado (plugin.skzconnect.status) num só passo. No Aeon Nox Silvo adiciona também a entrada de menu com o respetivo widget. Depois, reinicie o Kodi.</description>
+        <description lang="pt_BR">Instala o SKZ Connect (serviço de controles) e o widget de status (plugin.skzconnect.status) em uma só etapa. No Aeon Nox Silvo adiciona também a entrada de menu com o respectivo widget. Depois, reinicie o Kodi.</description>
+        <description lang="nl_NL">Installeert SKZ Connect (controllerdienst) en de statuswidget (plugin.skzconnect.status) in één stap. Bij Aeon Nox Silvo voegt het ook het menu-item met widget toe. Start Kodi daarna opnieuw.</description>
+        <description lang="pl_PL">Instaluje SKZ Connect (usługę kontrolerów) i widżet stanu (plugin.skzconnect.status) w jednym kroku. W Aeon Nox Silvo dodaje też pozycję menu z widżetem. Następnie uruchom ponownie Kodi.</description>
+        <description lang="ru_RU">Устанавливает SKZ Connect (службу контроллеров) и виджет состояния (plugin.skzconnect.status) за один шаг. В Aeon Nox Silvo также добавляет пункт меню с виджетом. После этого перезапустите Kodi.</description>
+        <description lang="ja_JP">SKZ Connect（コントローラーサービス）とステータスウィジェット（plugin.skzconnect.status）を一度にインストールします。Aeon Nox Silvo ではメニュー項目とウィジェットも自動で追加します。その後 Kodi を再起動してください。</description>
+        <description lang="zh_CN">一步安装 SKZ Connect（手柄服务）和状态小部件（plugin.skzconnect.status）。在 Aeon Nox Silvo 中还会自动添加菜单项及其小部件。之后请重启 Kodi。</description>
+        <description lang="ko_KR">SKZ Connect(컨트롤러 서비스)와 상태 위젯(plugin.skzconnect.status)을 한 번에 설치합니다. Aeon Nox Silvo에서는 메뉴 항목과 위젯도 자동으로 추가합니다. 그런 다음 Kodi를 다시 시작하세요.</description>
+        <platform>all</platform>
+        <news>1.0.6: Enthält service.skzconnect 0.4.8[CR]1.0.5: Enthält service.skzconnect 0.4.7 und plugin.skzconnect.status 1.1.4 (neues Icon)[CR]1.0.3–1.0.4: Heißt jetzt SKZ Connect Bundle Installer, enthält die umbenannten Add-ons[CR]1.0.2: Enthält service.skzconnect 0.4.4 und plugin.skzconnect.status 1.1.1 – wird jetzt mit jeder neuen SKZ-Connect-Version neu gebaut; Meldungen und Beschreibung in 12 Sprachen[CR]1.0.1: Enthält service.skzconnect 0.4.2 (alle Plattformen: LibreELEC, Batocera, Windows) und plugin.skzconnect.status 1.1.0; Widget-Pfad mit SkzConnect.Reload-Token (aktualisiert sich selbst)[CR]1.0.0: Erste Version</news>
+        <license>MIT</license>
+        <source>https://github.com/DevCatSKZ/SKZ-Connect</source>
+        <website>https://github.com/DevCatSKZ/SKZ-Connect</website>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+<addon id="script.steamlink" name="Steam Link" version="0.1.3" provider-name="DevCatSKZ">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="de_DE">Steam Link — Steam-Spiele auf den Fernseher streamen</summary>
+    <summary lang="en_GB">Steam Link — stream Steam games to your TV</summary>
+    <description lang="de_DE">Startet die offizielle Steam-Link-App (Valve) auf LibreELEC: Kodi pausiert kurz, Steam Link läuft Vollbild über EGLFS/KMS, danach kehrt Kodi zurück. Runtime wird beim ersten Start auf dem Gerät nachgeladen (aarch64 und armhf). Auf Windows öffnet das Add-on stattdessen Steam Remote Play.</description>
+    <description lang="en_GB">Launches the official Steam Link app (Valve) on LibreELEC: Kodi is suspended, Steam Link runs fullscreen via EGLFS/KMS, Kodi returns afterwards. The runtime is fetched on-device on first run (aarch64 and armhf). On Windows the addon opens Steam Remote Play instead.</description>
+    <platform>all</platform>
+    <license>GPL-3.0-only</license>
+    <source>https://github.com/flathub/com.valvesoftware.SteamLink</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+    <news>0.1.2 — Eingabe-Brücke: TV-Fernbedienung (CEC) + Remote-Apps (Kore/Yatse, JSON-RPC :9090) steuern ein virtuelles Xbox-360-Gamepad für Steam Link; udev-Regeln für Controller.
+0.1.1 — Fetcher: Dangling-Symlink-Reparatur nach dem Entpacken (Valve-Tarball hat Symlink-Einträge, deren Ziele später folgen).
+0.1.0 — Erste Version: Steam Link 1.4.2 (Valve RPi-Build) via EGLFS/KMS auf LibreELEC, Runtime-Fetch on-device, Kodi-Suspend-Launcher.</news>
+  </extension>
+</addon>
+<addon id="service.skzconnect" name="SKZ Connect" version="0.4.8" provider-name="devcatskz">
+  <requires>
+    <import addon="xbmc.python" version="3.0.1"/>
+  </requires>
+  <!-- Dienst: startet SKZ Connect mit Kodi und hält die Controller verbunden. -->
+  <extension point="xbmc.service" library="service.py"/>
+  <!-- Programm-Eintrag: Status, Controller trennen, Anleitung, Diagnose. -->
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <!-- Plugin-Quelle: verbundene Controller als Kodi-Widget im Home-Menü (wird bei jeder Änderung neu geladen). -->
+  <extension point="xbmc.python.pluginsource" library="plugin.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="de_DE">Switch-2-Controller (Joy-Con 2, Pro Controller 2, GameCube) für Kodi – LibreELEC, Batocera, Windows</summary>
+    <summary lang="en_GB">Switch 2 controllers (Joy-Con 2, Pro Controller 2, GameCube) for Kodi – LibreELEC, Batocera, Windows</summary>
+    <summary lang="es_ES">Mandos de Switch 2 (Joy-Con 2, Pro Controller 2, GameCube) y otros mandos Bluetooth para Kodi</summary>
+    <summary lang="fr_FR">Manettes Switch 2 (Joy-Con 2, Pro Controller 2, GameCube) et autres manettes Bluetooth pour Kodi</summary>
+    <summary lang="it_IT">Controller Switch 2 (Joy-Con 2, Pro Controller 2, GameCube) e altri controller Bluetooth per Kodi</summary>
+    <summary lang="pt_PT">Comandos Switch 2 (Joy-Con 2, Pro Controller 2, GameCube) e outros comandos Bluetooth para o Kodi</summary>
+    <summary lang="pt_BR">Controles do Switch 2 (Joy-Con 2, Pro Controller 2, GameCube) e outros controles Bluetooth para o Kodi</summary>
+    <summary lang="nl_NL">Switch 2-controllers (Joy-Con 2, Pro Controller 2, GameCube) en andere Bluetooth-controllers voor Kodi</summary>
+    <summary lang="pl_PL">Kontrolery Switch 2 (Joy-Con 2, Pro Controller 2, GameCube) i inne kontrolery Bluetooth dla Kodi</summary>
+    <summary lang="ru_RU">Контроллеры Switch 2 (Joy-Con 2, Pro Controller 2, GameCube) и другие Bluetooth-контроллеры для Kodi</summary>
+    <summary lang="ja_JP">Kodi 用 Switch 2 コントローラー（Joy-Con 2、Pro コントローラー 2、ゲームキューブ）とその他の Bluetooth コントローラー</summary>
+    <summary lang="zh_CN">适用于 Kodi 的 Switch 2 手柄（Joy-Con 2、Pro 手柄 2、GameCube）及其他蓝牙手柄</summary>
+    <summary lang="ko_KR">Kodi용 Switch 2 컨트롤러 (Joy-Con 2, Pro 컨트롤러 2, 게임큐브) 및 기타 블루투스 컨트롤러</summary>
+    <description lang="de_DE">SKZ Connect verbindet Nintendo-Switch-2-Controller per Bluetooth mit Kodi. Jeder Controller erscheint als Xbox-360-Controller – Kodi, RetroArch und Spiele erkennen ihn ohne Einrichtung. Joy-Con werden automatisch zu einem Paar zusammengefasst, Vibration und Spieler-LEDs funktionieren, nach dem ersten Koppeln genügt ein Tastendruck zum Verbinden.[CR][CR]Auf LibreELEC und Batocera (Linux) arbeitet das Add-on selbstständig. Auf Windows und Android übernimmt die installierte SKZ-Connect-App die Verbindung (Android: ab Version 0.9.1) – das Add-on zeigt Status und Widget an. Für macOS gibt es SKZ Connect nicht; dort kann das Add-on nur anzeigen. Zum Koppeln die kleine SYNC-Taste am Controller drücken.</description>
+    <description lang="en_GB">SKZ Connect connects Nintendo Switch 2 controllers to Kodi over Bluetooth. Each controller shows up as an Xbox 360 controller, so Kodi, RetroArch and games recognise it without setup. Joy-Con are combined into a pair automatically, rumble and player LEDs work, and after the first pairing a single button press reconnects.[CR][CR]On LibreELEC and Batocera (Linux) the add-on works on its own. On Windows and Android the installed SKZ Connect app does the connecting (Android: version 0.9.1 or newer) – the add-on shows status and widget. SKZ Connect is not available for macOS; there the add-on can only display. To pair, press the small SYNC button on the controller.</description>
+    <description lang="es_ES">SKZ Connect conecta los mandos de Nintendo Switch 2 a Kodi por Bluetooth. Cada mando aparece como un mando de Xbox 360, así que Kodi, RetroArch y los juegos lo reconocen sin configurar nada. Los Joy-Con se combinan automáticamente en un par, la vibración y los LED de jugador funcionan y, tras el primer emparejamiento, basta con pulsar un botón para reconectar.[CR][CR]En LibreELEC y Batocera (Linux) el add-on funciona por sí solo. En Windows y Android es la app SKZ Connect instalada la que conecta los mandos (Android: versión 0.9.1 o posterior); el add-on muestra el estado y el widget. SKZ Connect no está disponible para macOS; allí el add-on solo puede mostrar. Para emparejar, pulsa el pequeño botón SYNC del mando.</description>
+    <description lang="fr_FR">SKZ Connect connecte les manettes Nintendo Switch 2 à Kodi en Bluetooth. Chaque manette apparaît comme une manette Xbox 360 : Kodi, RetroArch et les jeux la reconnaissent sans configuration. Les Joy-Con sont automatiquement réunis en paire, la vibration et les LED de joueur fonctionnent et, après la première association, une simple pression sur un bouton suffit pour reconnecter.[CR][CR]Sous LibreELEC et Batocera (Linux), l'add-on fonctionne seul. Sous Windows et Android, c'est l'application SKZ Connect installée qui connecte les manettes (Android : version 0.9.1 ou plus récente) ; l'add-on affiche l'état et le widget. SKZ Connect n'existe pas pour macOS ; l'add-on peut seulement y afficher. Pour associer, appuyez sur le petit bouton SYNC de la manette.</description>
+    <description lang="it_IT">SKZ Connect collega i controller Nintendo Switch 2 a Kodi via Bluetooth. Ogni controller appare come un controller Xbox 360, quindi Kodi, RetroArch e i giochi lo riconoscono senza configurazione. I Joy-Con vengono uniti automaticamente in coppia, vibrazione e LED giocatore funzionano e, dopo la prima associazione, basta premere un tasto per ricollegarsi.[CR][CR]Su LibreELEC e Batocera (Linux) l'add-on funziona da solo. Su Windows e Android è l'app SKZ Connect installata a collegare i controller (Android: versione 0.9.1 o successiva); l'add-on mostra stato e widget. SKZ Connect non è disponibile per macOS; lì l'add-on può solo mostrare. Per associare, premi il piccolo tasto SYNC sul controller.</description>
+    <description lang="pt_PT">O SKZ Connect liga os comandos Nintendo Switch 2 ao Kodi por Bluetooth. Cada comando aparece como um comando Xbox 360, por isso o Kodi, o RetroArch e os jogos reconhecem-no sem configuração. Os Joy-Con são combinados automaticamente num par, a vibração e os LED de jogador funcionam e, após o primeiro emparelhamento, basta premir um botão para voltar a ligar.[CR][CR]No LibreELEC e no Batocera (Linux) o add-on funciona sozinho. No Windows e no Android é a aplicação SKZ Connect instalada que liga os comandos (Android: versão 0.9.1 ou mais recente) – o add-on mostra o estado e o widget. O SKZ Connect não está disponível para macOS; aí o add-on só pode mostrar. Para emparelhar, prima o pequeno botão SYNC do comando.</description>
+    <description lang="pt_BR">O SKZ Connect conecta os controles do Nintendo Switch 2 ao Kodi por Bluetooth. Cada controle aparece como um controle Xbox 360, então o Kodi, o RetroArch e os jogos o reconhecem sem configuração. Os Joy-Con são combinados automaticamente em um par, a vibração e os LEDs de jogador funcionam e, depois do primeiro pareamento, basta apertar um botão para reconectar.[CR][CR]No LibreELEC e no Batocera (Linux) o add-on funciona sozinho. No Windows e no Android é o app SKZ Connect instalado que conecta os controles (Android: versão 0.9.1 ou mais recente) – o add-on mostra o status e o widget. O SKZ Connect não está disponível para macOS; lá o add-on só pode exibir. Para parear, aperte o pequeno botão SYNC do controle.</description>
+    <description lang="nl_NL">SKZ Connect verbindt Nintendo Switch 2-controllers via Bluetooth met Kodi. Elke controller verschijnt als Xbox 360-controller, zodat Kodi, RetroArch en games hem zonder instellen herkennen. Joy-Con worden automatisch tot een paar samengevoegd, trillen en spelerlampjes werken, en na de eerste koppeling volstaat één druk op een knop om opnieuw te verbinden.[CR][CR]Op LibreELEC en Batocera (Linux) werkt de add-on zelfstandig. Op Windows en Android verbindt de geïnstalleerde SKZ-Connect-app de controllers (Android: versie 0.9.1 of nieuwer) – de add-on toont status en widget. SKZ Connect is niet beschikbaar voor macOS; daar kan de add-on alleen weergeven. Druk om te koppelen op de kleine SYNC-knop van de controller.</description>
+    <description lang="pl_PL">SKZ Connect łączy kontrolery Nintendo Switch 2 z Kodi przez Bluetooth. Każdy kontroler pojawia się jako kontroler Xbox 360, więc Kodi, RetroArch i gry rozpoznają go bez konfiguracji. Joy-Cony są automatycznie łączone w parę, wibracje i diody gracza działają, a po pierwszym sparowaniu do ponownego połączenia wystarczy nacisnąć przycisk.[CR][CR]W LibreELEC i Batocera (Linux) dodatek działa samodzielnie. W Windows i Androidzie kontrolery łączy zainstalowana aplikacja SKZ Connect (Android: wersja 0.9.1 lub nowsza) – dodatek pokazuje stan i widżet. SKZ Connect nie jest dostępny dla macOS; tam dodatek może tylko wyświetlać. Aby sparować, naciśnij mały przycisk SYNC na kontrolerze.</description>
+    <description lang="ru_RU">SKZ Connect подключает контроллеры Nintendo Switch 2 к Kodi по Bluetooth. Каждый контроллер отображается как контроллер Xbox 360, поэтому Kodi, RetroArch и игры распознают его без настройки. Joy-Con автоматически объединяются в пару, вибрация и светодиоды игрока работают, а после первого сопряжения для повторного подключения достаточно нажать кнопку.[CR][CR]В LibreELEC и Batocera (Linux) дополнение работает самостоятельно. В Windows и Android контроллеры подключает установленное приложение SKZ Connect (Android: версия 0.9.1 или новее) – дополнение показывает состояние и виджет. Для macOS SKZ Connect нет; там дополнение может только показывать. Для сопряжения нажмите маленькую кнопку SYNC на контроллере.</description>
+    <description lang="ja_JP">SKZ Connect は Nintendo Switch 2 のコントローラーを Bluetooth で Kodi に接続します。各コントローラーは Xbox 360 コントローラーとして認識されるので、Kodi、RetroArch、ゲームは設定なしで使えます。Joy-Con は自動でペアにまとめられ、振動とプレイヤーランプも動作し、初回のペアリング後はボタンを押すだけで再接続します。[CR][CR]LibreELEC と Batocera（Linux）ではアドオン単体で動作します。Windows と Android ではインストールした SKZ Connect アプリが接続を担当し（Android: バージョン 0.9.1 以降）、アドオンは状態とウィジェットを表示します。SKZ Connect は macOS に対応していないため、macOS では表示のみです。ペアリングするには、コントローラーの小さな SYNC ボタンを押してください。</description>
+    <description lang="zh_CN">SKZ Connect 通过蓝牙将 Nintendo Switch 2 手柄连接到 Kodi。每个手柄都显示为 Xbox 360 手柄，Kodi、RetroArch 和游戏无需设置即可识别。Joy-Con 会自动组合成一对，振动和玩家指示灯均可使用，首次配对后按一下按键即可重新连接。[CR][CR]在 LibreELEC 和 Batocera（Linux）上，插件可独立运行。在 Windows 和 Android 上由已安装的 SKZ Connect 应用负责连接（Android：0.9.1 或更高版本）– 插件显示状态和小部件。SKZ Connect 不支持 macOS；在那里插件只能显示。配对时请按手柄上的小 SYNC 键。</description>
+    <description lang="ko_KR">SKZ Connect는 Nintendo Switch 2 컨트롤러를 블루투스로 Kodi에 연결합니다. 각 컨트롤러는 Xbox 360 컨트롤러로 표시되므로 Kodi, RetroArch와 게임이 설정 없이 인식합니다. Joy-Con은 자동으로 한 쌍으로 묶이고, 진동과 플레이어 LED가 작동하며, 처음 페어링한 뒤에는 버튼 하나로 다시 연결됩니다.[CR][CR]LibreELEC와 Batocera(Linux)에서는 애드온이 스스로 작동합니다. Windows와 Android에서는 설치된 SKZ Connect 앱이 연결을 맡고(Android: 버전 0.9.1 이상) 애드온은 상태와 위젯을 표시합니다. SKZ Connect는 macOS용이 없어서 macOS에서는 표시만 할 수 있습니다. 페어링하려면 컨트롤러의 작은 SYNC 버튼을 누르세요.</description>
+    <disclaimer lang="de_DE">Kein offizielles Produkt von Nintendo. Benötigt Bluetooth.</disclaimer>
+    <disclaimer lang="en_GB">Not an official Nintendo product. Requires Bluetooth.</disclaimer>
+    <license>MIT</license>
+    <source>https://github.com/DevCatSKZ/SKZ-Connect</source>
+    <website>https://github.com/DevCatSKZ/SKZ-Connect</website>
+    <news>0.4.8: Status von SKZ Connect für Android 0.9.3 (neue App-Kennung)[CR]0.4.7: Neues Icon (Gamepad-Katze wie in der Windows- und Android-App)[CR]0.4.5–0.4.6: Neuer Name SKZ Connect, neue Add-on-Kennung service.skzconnect – Kopplungen und Einstellungen des alten Add-ons werden nicht übernommen: Controller einmal neu koppeln (SYNC), Einstellungen prüfen[CR]0.4.4: Controllerliste immer sichtbar – bei Bluetooth aus, ohne Adapter oder mit Adapter ohne Bluetooth LE steht ein Hinweis davor, passend zu LibreELEC, Windows oder Android; Begleitmodus (Windows/Android) mit eigener Anleitung und gesperrten Einstellungen, macOS als „nur Anzeige“; Programmwahl nach 32/64-Bit-System, Startfehler als Meldung statt Absturz; Neustart wartet auf das alte Programm, Reste einer abgestürzten Kodi-Sitzung werden beendet; Menübefehle bleiben nach einem Fehler nutzbar; kein Geist-Controller mehr nach Abbruch beim Verbinden; weniger Speicherbedarf bei langer Laufzeit[CR]0.4.3: Kodi auf Android liest den Status aus dem gemeinsamen Dokumente-Ordner – geschrieben wird er erst von SKZ Connect für Android ab 0.9.1 (Scoped Storage verwehrt den direkten Zugriff auf Kodis Datenordner)[CR]0.4.2: Begleitmodus nun auch wirklich auf Android (Kodi meldet dort 'Linux' – wird jetzt gezielt geprüft)[CR]0.4.1: Auf Kodi für Android/macOS stürzte der Dienst beim Start ab (kein Linux-Programm vorhanden) – dort läuft das Add-on jetzt sauber im Begleitmodus[CR]0.4.0: Läuft jetzt auf jeder Kodi-Plattform – zusätzlich zu LibreELEC auch Batocera (Linux) und Kodi unter Windows (Status/Widget kommen dort von der installierten SKZ-Connect-App)[CR]0.3.4: Widget zeigt auch bekannte, gerade nicht verbundene Controller (ausgegraut) und aktualisiert sich bei jedem Verbinden/Trennen von selbst (Skin-Pfad mit ?reload=$INFO[Window(Home).Property(SkzConnect.Reload)])[CR]0.3.3: Home-Widget lädt nur noch neu, wenn wirklich etwas Sichtbares ändert und eine SKZ-Connect-Liste fokussiert ist – vorher konnte das ständige Neuladen Hauptmenü und andere Listen stören (schwarzer Bildschirm); Berichtsrate nicht mehr in den Listen[CR]0.3.2: Verbindung auf Raspberry Pi &amp; Co. zuverlässiger – die Suche pausiert während des Verbindungsaufbaus (geteilte WLAN/BT-Antenne); Hinweis, falls aktives WLAN das Koppeln stört; neue Icons je Controller im Menü; verbundene Controller jetzt als Kodi-Widget im Home-Menü[CR]0.3.1: Joy-Con-Verbindung korrigiert – mit diesem Gerät gekoppelte Controller wurden fälschlich als „mit anderem Gerät verbunden“ gemeldet und konnten sich nicht verbinden[CR]0.3.0: Wii-Fernbedienung und Wii U Pro Controller koppeln, Gyro für Emulatoren (DSU/Cemuhook), feste Spielerplätze[CR]0.2.1:Name zeigt das System (LibreELEC/Linux), Downloads je Gerät[CR]0.2.0:Xbox-, PlayStation- und Switch-1-Controller automatisch koppeln, Hintergrundsuche abschaltbar, Akku-Warnung, Controller-Tasten für Kodi-Aktionen, 12 Sprachen, Update-Repository[CR]0.1.0: Erste Version für LibreELEC/Kodi</news>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+<addon id="service.sunshine" name="Sunshine Game Stream Host" version="0.1.2" provider-name="DevCatSKZ">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.service" library="service.py" start="login"/>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="de_DE">Sunshine Game-Stream-Host</summary>
+    <summary lang="en_GB">Sunshine game stream host</summary>
+    <description lang="de_DE">Streamt den Kodi-Desktop per Moonlight-Protokoll an Clients (anderer TV, Handy, PC). Konfiguration und Pairing über die Web-UI auf https://&lt;ip&gt;:47990. Nur LibreELEC aarch64 (Raspberry Pi 4/5).</description>
+    <description lang="en_GB">Streams the Kodi desktop to Moonlight clients via the Sunshine protocol. Configure and pair via the web UI at https://&lt;ip&gt;:47990. LibreELEC aarch64 (Raspberry Pi 4/5) only.</description>
+    <platform>all</platform>
+    <license>GPL-3.0-only</license>
+    <source>https://github.com/LizardByte/Sunshine</source>
+    <assets>
+      <icon>icon.png</icon>
+    </assets>
+    <news>0.1.0 — Erster Release: KMS-Capture + libx264 auf LibreELEC aarch64.</news>
+  </extension>
+</addon>
+</addons>
