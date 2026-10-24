@@ -282,7 +282,7 @@
     </assets>
   </extension>
 </addon>
-<addon id="script.moonlight" name="Moonlight Stream Client" version="0.1.1" provider-name="DevCatSKZ">
+<addon id="script.moonlight.devcat" name="Moonlight Stream Client" version="0.2.0" provider-name="DevCatSKZ">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -290,17 +290,19 @@
     <provides>executable</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="de_DE">Moonlight Game-Stream-Client</summary>
-    <summary lang="en_GB">Moonlight game stream client</summary>
-    <description lang="de_DE">Spielt Sunshine-/GameStream-Streams auf dem Fernseher ab (moonlight-embedded, dispmanx-Overlay parallel zu Kodi). Noch im Aufbau — Runtime wird auf dem Gerät kompiliert.</description>
-    <description lang="en_GB">Plays Sunshine/GameStream streams on the TV (moonlight-embedded, dispmanx overlay alongside Kodi). Work in progress — runtime is compiled on-device.</description>
+    <summary lang="de_DE">Moonlight — Spiele vom PC (Sunshine/GameStream) auf den Fernseher streamen</summary>
+    <summary lang="en_GB">Moonlight — stream games from a PC (Sunshine/GameStream) to your TV</summary>
+    <description lang="de_DE">Spielt Sunshine-/GameStream-Streams auf dem Fernseher ab (moonlight-embedded 2.7.1 über SDL/KMS): Host per PIN paaren, App wählen, Kodi pausiert während des Streams und kommt danach zurück. TV-Fernbedienung (CEC) und Remote-Apps steuern ein virtuelles Gamepad. moonlight-embedded liegt bei (GPLv3), die Bibliotheken lädt das Add-on beim ersten Start aus Debian. LibreELEC aarch64 (Raspberry Pi 4/5).</description>
+    <description lang="en_GB">Plays Sunshine/GameStream streams on the TV (moonlight-embedded 2.7.1 via SDL/KMS): pair a host by PIN, pick an app, Kodi is suspended during the stream and returns afterwards. TV remote (CEC) and remote apps drive a virtual gamepad. moonlight-embedded is bundled (GPLv3), the add-on fetches its libraries from Debian on first run. LibreELEC aarch64 (Raspberry Pi 4/5).</description>
     <platform>all</platform>
     <license>GPL-3.0-only</license>
     <source>https://github.com/moonlight-stream/moonlight-embedded</source>
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <news>0.1.0 — Gerüst. moonlight-embedded-Runtime folgt (On-Device-Build).</news>
+    <news>0.2.0 — Neue Add-on-Kennung script.moonlight.devcat (die alte ID wurde vom LibreELEC-Repo durch ein leeres „removed“-Add-on ersetzt). Pairing zeigt die PIN sofort; Runtime-Installation aus dem Menü ohne Compiler; Start klappt auch nach einem Absturz; Kodi kommt auch bei SIGTERM zurück; TV-Fernbedienung/Remote-Apps als Gamepad, Exit lang drücken beendet den Stream; Controller-Dienst (SKZ/N-Connect) läuft weiter; Host-Menü (App beenden, neu paaren, entfernen); Bildrate einstellbar; Bildmodus für Streams (gegen 4K@30).
+0.1.1 — Audio-Routing und Kodi-Suspend-Launcher.
+0.1.0 — Gerüst.</news>
   </extension>
 </addon>
 <addon id="script.service.veracrypt"
@@ -379,7 +381,7 @@
         </assets>
     </extension>
 </addon>
-<addon id="script.steamlink" name="Steam Link" version="0.1.3" provider-name="DevCatSKZ">
+<addon id="script.steamlink" name="Steam Link" version="0.1.4" provider-name="DevCatSKZ">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -389,15 +391,17 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="de_DE">Steam Link — Steam-Spiele auf den Fernseher streamen</summary>
     <summary lang="en_GB">Steam Link — stream Steam games to your TV</summary>
-    <description lang="de_DE">Startet die offizielle Steam-Link-App (Valve) auf LibreELEC: Kodi pausiert kurz, Steam Link läuft Vollbild über EGLFS/KMS, danach kehrt Kodi zurück. Runtime wird beim ersten Start auf dem Gerät nachgeladen (aarch64 und armhf). Auf Windows öffnet das Add-on stattdessen Steam Remote Play.</description>
-    <description lang="en_GB">Launches the official Steam Link app (Valve) on LibreELEC: Kodi is suspended, Steam Link runs fullscreen via EGLFS/KMS, Kodi returns afterwards. The runtime is fetched on-device on first run (aarch64 and armhf). On Windows the addon opens Steam Remote Play instead.</description>
+    <description lang="de_DE">Startet die offizielle Steam-Link-App (Valve) auf LibreELEC: Kodi pausiert kurz, Steam Link läuft Vollbild über EGLFS/KMS, danach kehrt Kodi zurück. Runtime wird beim ersten Start auf dem Gerät nachgeladen (aarch64 und armhf/ARMv7). TV-Fernbedienung (CEC) und Remote-Apps (Kore/Yatse) steuern ein virtuelles Gamepad. Auf Windows öffnet das Add-on stattdessen Steam Remote Play.</description>
+    <description lang="en_GB">Launches the official Steam Link app (Valve) on LibreELEC: Kodi is suspended, Steam Link runs fullscreen via EGLFS/KMS, Kodi returns afterwards. The runtime is fetched on-device on first run (aarch64 and armhf/ARMv7). TV remote (CEC) and remote apps (Kore/Yatse) drive a virtual gamepad. On Windows the addon opens Steam Remote Play instead.</description>
     <platform>all</platform>
     <license>GPL-3.0-only</license>
     <source>https://github.com/flathub/com.valvesoftware.SteamLink</source>
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <news>0.1.2 — Eingabe-Brücke: TV-Fernbedienung (CEC) + Remote-Apps (Kore/Yatse, JSON-RPC :9090) steuern ein virtuelles Xbox-360-Gamepad für Steam Link; udev-Regeln für Controller.
+    <news>0.1.4 — Start klappt wieder nach einem Absturz (systemd-run --collect), Kodi kommt auch bei SIGTERM zurück; CEC-Fernbedienung funktioniert (cec-client-Aufruf korrigiert, Exit lang drücken beendet); Remote-Apps auch über HTTP :8080 mit Kodi-Login; Tastenbelegung wie echtes Xbox-360-Pad; HDMI-Anschluss automatisch; Controller-Dienst (SKZ/N-Connect) läuft während Steam Link weiter; Bildmodus für Streams (gegen 4K@30); Downloads per HTTPS mit SHA256-Prüfung.
+0.1.3 — Beenden-Pfade zurück zu Kodi (Remote-App, CEC, Menüpunkt).
+0.1.2 — Eingabe-Brücke: TV-Fernbedienung (CEC) + Remote-Apps (Kore/Yatse, JSON-RPC :9090) steuern ein virtuelles Xbox-360-Gamepad für Steam Link; udev-Regeln für Controller.
 0.1.1 — Fetcher: Dangling-Symlink-Reparatur nach dem Entpacken (Valve-Tarball hat Symlink-Einträge, deren Ziele später folgen).
 0.1.0 — Erste Version: Steam Link 1.4.2 (Valve RPi-Build) via EGLFS/KMS auf LibreELEC, Runtime-Fetch on-device, Kodi-Suspend-Launcher.</news>
   </extension>
@@ -455,7 +459,7 @@
     </assets>
   </extension>
 </addon>
-<addon id="service.sunshine" name="Sunshine Game Stream Host" version="0.1.2" provider-name="DevCatSKZ">
+<addon id="service.sunshine" name="Sunshine Game Stream Host" version="0.1.3" provider-name="DevCatSKZ">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
@@ -474,7 +478,10 @@
     <assets>
       <icon>icon.png</icon>
     </assets>
-    <news>0.1.0 — Erster Release: KMS-Capture + libx264 auf LibreELEC aarch64.</news>
+    <news>0.1.3 — Menü „Sunshine starten“ und „Runtime installieren“ funktionieren (vorher immer Fehler); Installer lädt die neueste LizardByte-Version samt Bibliotheken per HTTPS mit SHA256-Prüfung; Watchdog startet Sunshine nach einem Absturz neu; Web-UI-Port korrekt (Sunshine-Basisport = Web-UI-Port − 1); Ton-Ausgabe folgt dem angeschlossenen HDMI-Port; Kodi-Audio per Menü auf PulseAudio; Log-Anzeige.
+0.1.2 — /usr/share per overlayfs statt Symlink-Spiegel.
+0.1.1 — runtime_dir-Fix, Pulse-Sink-Retry.
+0.1.0 — Erster Release: KMS-Capture + libx264 auf LibreELEC aarch64.</news>
   </extension>
 </addon>
 </addons>
