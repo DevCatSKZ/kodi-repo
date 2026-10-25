@@ -1,0 +1,40 @@
+name: Drittanbieter-Plugins aktualisieren
+
+# Holt täglich die neuesten GitHub-Releases der gespiegelten Plugins
+# (plugin.video.youtube, plugin.video.newpipe) und baut den Repo-Index neu.
+# Kodi sieht neue Fassungen dann über repository.devcatskz als normale Updates.
+
+on:
+  schedule:
+    - cron: '17 3 * * *'   # täglich 03:17 UTC (krumme Minute gegen Lastspitzen)
+  workflow_dispatch:        # manueller Start über den Actions-Reiter
+
+permissions:
+  contents: write           # Action darf committen und pushen
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Neueste Releases holen und Index bauen
+        run: |
+          python tools/update_drittanbieter.py
+          python tools/build_repo.py
+
+      - name: Änderungen committen
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "devcatskz"
+            git config user.email "devcatskz@gmail.com"
+            git add -A
+            git commit -m "Drittanbieter-Update $(date +%Y-%m-%d): neue Plugin-Releases"
+            git push
+          else
+            echo "Keine neuen Releases – nichts zu tun."
+          fi
