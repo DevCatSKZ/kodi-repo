@@ -11,7 +11,7 @@
 
 | Add-on | Beschreibung · Description |
 |---|---|
-| **[SKZ Connect](https://github.com/DevCatSKZ/SKZ-Connect)** (`service.skzconnect`) | Switch-2-, Xbox-, PlayStation- und Wii-Controller per Bluetooth als Xbox-Controller für Kodi und RetroArch; Vibration, Akkuwarnung, Home-Widget. LibreELEC, Batocera, Windows. · *Bluetooth controllers as Xbox controllers for Kodi and RetroArch.* |
+| **[SKZ Connect](https://github.com/DevCatSKZ/SKZ-Connect)** (`service.skzconnect`) | Switch-2-Controller für Kodi und RetroArch; Akkuanzeige, neue Modellbilder und Widgets. Andere Controller werden über Linux gekoppelt. · *Switch 2 controllers for Kodi and RetroArch; battery display, new model artwork and widgets. Linux handles other paired controllers.* |
 | SKZ Connect Status (`plugin.skzconnect.status`) | Widget-Quelle für Skins (`plugin://plugin.skzconnect.status/`). · *Widget source for skins.* |
 | SKZ Connect Bundle (`script.skzconnect.bundle`) | Installiert beide SKZ Connect-Add-ons in einem Schritt und richtet den Menüpunkt in Aeon Nox Silvo ein. · *Installs both SKZ Connect add-ons in one step and adds the menu entry in Aeon Nox Silvo.* |
 | **[Catnewz](https://devcatskz.github.io/Catnewz/)** (`plugin.program.catnewz`) | Katzen-News nach Stimmung sortiert, mit Lesemodus, Widgets und Aktualisierung im Hintergrund. Kodi 19–22, alle Systeme. · *Cat news sorted by mood, with reader mode, widgets and background updates. Kodi 19–22.* |
@@ -23,6 +23,16 @@
 
 Getestet auf Raspberry Pi 4 (LibreELEC 12.2) und Kodi 21 unter Windows; andere Geräte sind ungetestet.
 *Tested on Raspberry Pi 4 (LibreELEC 12.2) and Kodi 21 on Windows; other devices are untested.*
+
+## SKZ Connect 0.4.9
+
+Neue Controllerbilder mit getrennten Modell-, Joy-Con- und Offline-Varianten.
+Status-Plugin 1.1.5 und Bundle 1.0.7 nutzen denselben Bildbestand.
+
+*New controller artwork with separate model, Joy-Con and offline variants.
+Status plugin 1.1.5 and bundle 1.0.7 use the same artwork.*
+
+<img src="https://devcatskz.github.io/SKZ-Connect/controllers/pro2.png" width="128" alt="Pro Controller 2"> <img src="https://devcatskz.github.io/SKZ-Connect/controllers/gamecube.png" width="128" alt="GameCube"> <img src="https://devcatskz.github.io/SKZ-Connect/controllers/jc2_paar.png" width="128" alt="Joy-Con 2">
 
 ## Installation
 

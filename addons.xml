@@ -49,13 +49,13 @@
     </assets>
   </extension>
 </addon>
-<addon id="plugin.skzconnect.status" name="SKZ Connect Status" version="1.1.4" provider-name="devcatskz">
+<addon id="plugin.skzconnect.status" name="SKZ Connect Status" version="1.1.5" provider-name="devcatskz">
     <!-- Ältere Widget-Quelle für Skins (plugin://plugin.skzconnect.status/). Die Anzeige liegt in service.skzconnect
          (plugin.py) – dieses Add-on leitet nur weiter, damit bestehende Widget-Einstellungen weiter funktionieren.
          Das Symbol (resources/icon.png) legt linux/build-kodi-addon.ps1 beim Packen hinein. -->
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="service.skzconnect" version="0.3.4"/>
+        <import addon="service.skzconnect" version="0.4.9"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -91,7 +91,7 @@
         <license>MIT</license>
         <source>https://github.com/DevCatSKZ/SKZ-Connect</source>
         <website>https://github.com/DevCatSKZ/SKZ-Connect</website>
-        <news>1.1.4: Neues Icon[CR]1.1.2–1.1.3: Heißt jetzt SKZ Connect Status, neue Kennung plugin.skzconnect.status[CR]1.1.1: Quellcode im SKZ-Connect-Repository, Anbieter devcatskz, Beschreibung in 12 Sprachen – Anzeige unverändert (kommt aus service.skzconnect)[CR]1.1.0: Widget zeigt auch bekannte, gerade nicht verbundene Controller und lädt sich bei Änderungen selbst neu</news>
+        <news>1.1.5: Controllerbilder aus SKZ Connect 0.4.9 / Controller artwork from SKZ Connect 0.4.9</news>
         <assets>
             <icon>resources/icon.png</icon>
         </assets>
@@ -338,7 +338,7 @@
     <news>1.0.1: Nur Metadaten – Anbieter korrigiert, Platzhalter-Quelle entfernt, kürzere Beschreibungen.[CR]1.0.0: Initial release – mount/unmount of existing VeraCrypt volumes, credential vault, auto-mount policies.</news>
   </extension>
 </addon>
-<addon id="script.skzconnect.bundle" name="SKZ Connect Bundle Installer" version="1.0.6" provider-name="devcatskz">
+<addon id="script.skzconnect.bundle" name="SKZ Connect Bundle Installer" version="1.0.7" provider-name="devcatskz">
     <!-- Offline-Installer: bringt service.skzconnect und plugin.skzconnect.status als ZIPs mit (resources/data). Die ZIPs
          und das Symbol legt linux/build-kodi-addon.ps1 beim Packen hinein – jeweils die aktuelle Version. Bei jeder
          neuen service.skzconnect- oder Plugin-Version auch hier die Version erhöhen (das Build-Skript prüft das).
@@ -378,7 +378,7 @@
         <description lang="zh_CN">一步安装 SKZ Connect（手柄服务）和状态小部件（plugin.skzconnect.status）。在 Aeon Nox Silvo 中还会自动添加菜单项及其小部件。之后请重启 Kodi。</description>
         <description lang="ko_KR">SKZ Connect(컨트롤러 서비스)와 상태 위젯(plugin.skzconnect.status)을 한 번에 설치합니다. Aeon Nox Silvo에서는 메뉴 항목과 위젯도 자동으로 추가합니다. 그런 다음 Kodi를 다시 시작하세요.</description>
         <platform>all</platform>
-        <news>1.0.6: Enthält service.skzconnect 0.4.8[CR]1.0.5: Enthält service.skzconnect 0.4.7 und plugin.skzconnect.status 1.1.4 (neues Icon)[CR]1.0.3–1.0.4: Heißt jetzt SKZ Connect Bundle Installer, enthält die umbenannten Add-ons[CR]1.0.2: Enthält service.skzconnect 0.4.4 und plugin.skzconnect.status 1.1.1 – wird jetzt mit jeder neuen SKZ-Connect-Version neu gebaut; Meldungen und Beschreibung in 12 Sprachen[CR]1.0.1: Enthält service.skzconnect 0.4.2 (alle Plattformen: LibreELEC, Batocera, Windows) und plugin.skzconnect.status 1.1.0; Widget-Pfad mit SkzConnect.Reload-Token (aktualisiert sich selbst)[CR]1.0.0: Erste Version</news>
+        <news>1.0.7: SKZ Connect 0.4.9 und Status 1.1.5 / SKZ Connect 0.4.9 and Status 1.1.5</news>
         <license>MIT</license>
         <source>https://github.com/DevCatSKZ/SKZ-Connect</source>
         <website>https://github.com/DevCatSKZ/SKZ-Connect</website>
@@ -417,7 +417,7 @@
 0.1.0 — Erste Version: Steam Link 1.4.2 (Valve RPi-Build) via EGLFS/KMS auf LibreELEC, Runtime-Fetch on-device, Kodi-Suspend-Launcher.</news>
   </extension>
 </addon>
-<addon id="service.skzconnect" name="SKZ Connect" version="0.4.8" provider-name="devcatskz">
+<addon id="service.skzconnect" name="SKZ Connect" version="0.4.9" provider-name="devcatskz">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
   </requires>
@@ -464,7 +464,7 @@
     <license>MIT</license>
     <source>https://github.com/DevCatSKZ/SKZ-Connect</source>
     <website>https://github.com/DevCatSKZ/SKZ-Connect</website>
-    <news>0.4.8: Status von SKZ Connect für Android 0.9.3 (neue App-Kennung)[CR]0.4.7: Neues Icon (Gamepad-Katze wie in der Windows- und Android-App)[CR]0.4.5–0.4.6: Neuer Name SKZ Connect, neue Add-on-Kennung service.skzconnect – Kopplungen und Einstellungen des alten Add-ons werden nicht übernommen: Controller einmal neu koppeln (SYNC), Einstellungen prüfen[CR]0.4.4: Controllerliste immer sichtbar – bei Bluetooth aus, ohne Adapter oder mit Adapter ohne Bluetooth LE steht ein Hinweis davor, passend zu LibreELEC, Windows oder Android; Begleitmodus (Windows/Android) mit eigener Anleitung und gesperrten Einstellungen, macOS als „nur Anzeige“; Programmwahl nach 32/64-Bit-System, Startfehler als Meldung statt Absturz; Neustart wartet auf das alte Programm, Reste einer abgestürzten Kodi-Sitzung werden beendet; Menübefehle bleiben nach einem Fehler nutzbar; kein Geist-Controller mehr nach Abbruch beim Verbinden; weniger Speicherbedarf bei langer Laufzeit[CR]0.4.3: Kodi auf Android liest den Status aus dem gemeinsamen Dokumente-Ordner – geschrieben wird er erst von SKZ Connect für Android ab 0.9.1 (Scoped Storage verwehrt den direkten Zugriff auf Kodis Datenordner)[CR]0.4.2: Begleitmodus nun auch wirklich auf Android (Kodi meldet dort 'Linux' – wird jetzt gezielt geprüft)[CR]0.4.1: Auf Kodi für Android/macOS stürzte der Dienst beim Start ab (kein Linux-Programm vorhanden) – dort läuft das Add-on jetzt sauber im Begleitmodus[CR]0.4.0: Läuft jetzt auf jeder Kodi-Plattform – zusätzlich zu LibreELEC auch Batocera (Linux) und Kodi unter Windows (Status/Widget kommen dort von der installierten SKZ-Connect-App)[CR]0.3.4: Widget zeigt auch bekannte, gerade nicht verbundene Controller (ausgegraut) und aktualisiert sich bei jedem Verbinden/Trennen von selbst (Skin-Pfad mit ?reload=$INFO[Window(Home).Property(SkzConnect.Reload)])[CR]0.3.3: Home-Widget lädt nur noch neu, wenn wirklich etwas Sichtbares ändert und eine SKZ-Connect-Liste fokussiert ist – vorher konnte das ständige Neuladen Hauptmenü und andere Listen stören (schwarzer Bildschirm); Berichtsrate nicht mehr in den Listen[CR]0.3.2: Verbindung auf Raspberry Pi &amp; Co. zuverlässiger – die Suche pausiert während des Verbindungsaufbaus (geteilte WLAN/BT-Antenne); Hinweis, falls aktives WLAN das Koppeln stört; neue Icons je Controller im Menü; verbundene Controller jetzt als Kodi-Widget im Home-Menü[CR]0.3.1: Joy-Con-Verbindung korrigiert – mit diesem Gerät gekoppelte Controller wurden fälschlich als „mit anderem Gerät verbunden“ gemeldet und konnten sich nicht verbinden[CR]0.3.0: Wii-Fernbedienung und Wii U Pro Controller koppeln, Gyro für Emulatoren (DSU/Cemuhook), feste Spielerplätze[CR]0.2.1:Name zeigt das System (LibreELEC/Linux), Downloads je Gerät[CR]0.2.0:Xbox-, PlayStation- und Switch-1-Controller automatisch koppeln, Hintergrundsuche abschaltbar, Akku-Warnung, Controller-Tasten für Kodi-Aktionen, 12 Sprachen, Update-Repository[CR]0.1.0: Erste Version für LibreELEC/Kodi</news>
+    <news>0.4.9: Neue Controllerbilder mit Modell- und Offline-Varianten / New model-specific and offline controller artwork</news>
     <assets>
       <icon>resources/icon.png</icon>
     </assets>
