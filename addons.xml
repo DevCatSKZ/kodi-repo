@@ -49,13 +49,13 @@
     </assets>
   </extension>
 </addon>
-<addon id="plugin.skzconnect.status" name="SKZ Connect Status" version="1.1.5" provider-name="devcatskz">
+<addon id="plugin.skzconnect.status" name="SKZ Connect Status" version="1.1.6" provider-name="devcatskz">
     <!-- Ältere Widget-Quelle für Skins (plugin://plugin.skzconnect.status/). Die Anzeige liegt in service.skzconnect
          (plugin.py) – dieses Add-on leitet nur weiter, damit bestehende Widget-Einstellungen weiter funktionieren.
          Das Symbol (resources/icon.png) legt linux/build-kodi-addon.ps1 beim Packen hinein. -->
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="service.skzconnect" version="0.4.9"/>
+        <import addon="service.skzconnect" version="0.4.10"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -91,7 +91,7 @@
         <license>MIT</license>
         <source>https://github.com/DevCatSKZ/SKZ-Connect</source>
         <website>https://github.com/DevCatSKZ/SKZ-Connect</website>
-        <news>1.1.5: Controllerbilder aus SKZ Connect 0.4.9 / Controller artwork from SKZ Connect 0.4.9</news>
+        <news>SKZ Connect Status-Widget / SKZ Connect status widget</news>
         <assets>
             <icon>resources/icon.png</icon>
         </assets>
@@ -338,7 +338,7 @@
     <news>1.0.1: Nur Metadaten – Anbieter korrigiert, Platzhalter-Quelle entfernt, kürzere Beschreibungen.[CR]1.0.0: Initial release – mount/unmount of existing VeraCrypt volumes, credential vault, auto-mount policies.</news>
   </extension>
 </addon>
-<addon id="script.skzconnect.bundle" name="SKZ Connect Bundle Installer" version="1.0.7" provider-name="devcatskz">
+<addon id="script.skzconnect.bundle" name="SKZ Connect Bundle Installer" version="1.0.8" provider-name="devcatskz">
     <!-- Offline-Installer: bringt service.skzconnect und plugin.skzconnect.status als ZIPs mit (resources/data). Die ZIPs
          und das Symbol legt linux/build-kodi-addon.ps1 beim Packen hinein – jeweils die aktuelle Version. Bei jeder
          neuen service.skzconnect- oder Plugin-Version auch hier die Version erhöhen (das Build-Skript prüft das).
@@ -378,7 +378,7 @@
         <description lang="zh_CN">一步安装 SKZ Connect（手柄服务）和状态小部件（plugin.skzconnect.status）。在 Aeon Nox Silvo 中还会自动添加菜单项及其小部件。之后请重启 Kodi。</description>
         <description lang="ko_KR">SKZ Connect(컨트롤러 서비스)와 상태 위젯(plugin.skzconnect.status)을 한 번에 설치합니다. Aeon Nox Silvo에서는 메뉴 항목과 위젯도 자동으로 추가합니다. 그런 다음 Kodi를 다시 시작하세요.</description>
         <platform>all</platform>
-        <news>1.0.7: SKZ Connect 0.4.9 und Status 1.1.5 / SKZ Connect 0.4.9 and Status 1.1.5</news>
+        <news>SKZ Connect und Status-Widget / SKZ Connect and status widget</news>
         <license>MIT</license>
         <source>https://github.com/DevCatSKZ/SKZ-Connect</source>
         <website>https://github.com/DevCatSKZ/SKZ-Connect</website>
@@ -417,7 +417,7 @@
 0.1.0 — Erste Version: Steam Link 1.4.2 (Valve RPi-Build) via EGLFS/KMS auf LibreELEC, Runtime-Fetch on-device, Kodi-Suspend-Launcher.</news>
   </extension>
 </addon>
-<addon id="service.skzconnect" name="SKZ Connect" version="0.4.9" provider-name="devcatskz">
+<addon id="service.skzconnect" name="SKZ Connect" version="0.4.10" provider-name="devcatskz">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
   </requires>
@@ -464,7 +464,7 @@
     <license>MIT</license>
     <source>https://github.com/DevCatSKZ/SKZ-Connect</source>
     <website>https://github.com/DevCatSKZ/SKZ-Connect</website>
-    <news>0.4.9: Neue Controllerbilder mit Modell- und Offline-Varianten / New model-specific and offline controller artwork</news>
+    <news>SKZ Connect für Kodi und RetroArch / SKZ Connect for Kodi and RetroArch</news>
     <assets>
       <icon>resources/icon.png</icon>
     </assets>

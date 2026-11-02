@@ -24,13 +24,13 @@
 Getestet auf Raspberry Pi 4 (LibreELEC 12.2) und Kodi 21 unter Windows; andere Geräte sind ungetestet.
 *Tested on Raspberry Pi 4 (LibreELEC 12.2) and Kodi 21 on Windows; other devices are untested.*
 
-## SKZ Connect 0.4.9
+## SKZ Connect
 
-Neue Controllerbilder mit getrennten Modell-, Joy-Con- und Offline-Varianten.
-Status-Plugin 1.1.5 und Bundle 1.0.7 nutzen denselben Bildbestand.
+Controllerstatus, Akkuanzeige, Modellbilder und Widgets für Kodi.
+Dienst 0.4.10 · Status-Plugin 1.1.6 · Bundle 1.0.8.
 
-*New controller artwork with separate model, Joy-Con and offline variants.
-Status plugin 1.1.5 and bundle 1.0.7 use the same artwork.*
+*Controller status, battery display, model artwork and widgets for Kodi.
+Service 0.4.10 · status plugin 1.1.6 · bundle 1.0.8.*
 
 <img src="https://devcatskz.github.io/SKZ-Connect/controllers/pro2.png" width="128" alt="Pro Controller 2"> <img src="https://devcatskz.github.io/SKZ-Connect/controllers/gamecube.png" width="128" alt="GameCube"> <img src="https://devcatskz.github.io/SKZ-Connect/controllers/jc2_paar.png" width="128" alt="Joy-Con 2">
 
