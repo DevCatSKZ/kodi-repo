@@ -338,7 +338,7 @@
     <news>1.0.1: Nur Metadaten – Anbieter korrigiert, Platzhalter-Quelle entfernt, kürzere Beschreibungen.[CR]1.0.0: Initial release – mount/unmount of existing VeraCrypt volumes, credential vault, auto-mount policies.</news>
   </extension>
 </addon>
-<addon id="script.skzconnect.bundle" name="SKZ Connect Bundle Installer" version="1.0.8" provider-name="devcatskz">
+<addon id="script.skzconnect.bundle" name="SKZ Connect Bundle Installer" version="1.0.9" provider-name="devcatskz">
     <!-- Offline-Installer: bringt service.skzconnect und plugin.skzconnect.status als ZIPs mit (resources/data). Die ZIPs
          und das Symbol legt linux/build-kodi-addon.ps1 beim Packen hinein – jeweils die aktuelle Version. Bei jeder
          neuen service.skzconnect- oder Plugin-Version auch hier die Version erhöhen (das Build-Skript prüft das).
@@ -417,7 +417,7 @@
 0.1.0 — Erste Version: Steam Link 1.4.2 (Valve RPi-Build) via EGLFS/KMS auf LibreELEC, Runtime-Fetch on-device, Kodi-Suspend-Launcher.</news>
   </extension>
 </addon>
-<addon id="service.skzconnect" name="SKZ Connect" version="0.4.10" provider-name="devcatskz">
+<addon id="service.skzconnect" name="SKZ Connect" version="0.4.11" provider-name="devcatskz">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
   </requires>
