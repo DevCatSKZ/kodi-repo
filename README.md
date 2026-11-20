@@ -27,10 +27,10 @@ Getestet auf Raspberry Pi 4 (LibreELEC 12.2) und Kodi 21 unter Windows; andere G
 ## SKZ Connect
 
 Controllerstatus, Akkuanzeige, Modellbilder und Widgets für Kodi.
-Dienst 0.4.10 · Status-Plugin 1.1.6 · Bundle 1.0.8.
+Dienst 0.4.12 · Status-Plugin 1.1.6 · Bundle 1.0.10.
 
 *Controller status, battery display, model artwork and widgets for Kodi.
-Service 0.4.10 · status plugin 1.1.6 · bundle 1.0.8.*
+Service 0.4.12 · status plugin 1.1.6 · bundle 1.0.10.*
 
 <img src="https://devcatskz.github.io/SKZ-Connect/controllers/pro2.png" width="128" alt="Pro Controller 2"> <img src="https://devcatskz.github.io/SKZ-Connect/controllers/gamecube.png" width="128" alt="GameCube"> <img src="https://devcatskz.github.io/SKZ-Connect/controllers/jc2_paar.png" width="128" alt="Joy-Con 2">
 
